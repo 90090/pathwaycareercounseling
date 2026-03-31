@@ -1,0 +1,114 @@
+---
+const CALENDLY_URL = "https://calendly.com/YOUR_LINK_HERE";
+
+const navLinks = [
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/#services" },
+  { label: "The Pathway", href: "/#pathway" },
+  { label: "Speaking", href: "/speaking" },
+  { label: "Book", href: "/book" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/#contact" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header
+  id="main-nav"
+  class="fixed left-0 right-0 z-50 transition-all duration-300"
+  style="top: var(--bar-height, 44px);"
+>
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="flex items-center justify-between h-20">
+
+      <!-- Wordmark -->
+      <a href="/" class="flex flex-col leading-none group">
+        <span class="font-display text-xl text-charcoal-900 tracking-wide group-hover:text-gold-500 transition-colors duration-300">
+          Pathway
+        </span>
+        <span class="font-body text-[10px] tracking-[0.3em] uppercase text-gold-500 mt-0.5">
+          Career Coaching & Self Development
+        </span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-8">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="font-body text-xs tracking-[0.15em] uppercase text-charcoal-800 hover:text-gold-500 transition-colors duration-300 relative group"
+          >
+            {link.label}
+            <span class="absolute -bottom-0.5 left-0 w-0 h-px bg-gold-500 transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        ))}
+      </nav>
+
+      <!-- CTA -->
+      <div class="hidden lg:flex items-center gap-4">
+        <a
+          href={CALENDLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary text-xs py-3 px-6"
+        >
+          Free Consultation
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <button
+        id="mobile-menu-btn"
+        class="lg:hidden flex flex-col gap-1.5 p-2"
+        aria-label="Toggle menu"
+      >
+        <span class="w-6 h-px bg-charcoal-900 transition-all duration-300" id="line1"></span>
+        <span class="w-6 h-px bg-charcoal-900 transition-all duration-300" id="line2"></span>
+        <span class="w-4 h-px bg-gold-500 transition-all duration-300" id="line3"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="lg:hidden hidden bg-cream-100/98 backdrop-blur-sm border-t border-cream-200 px-6 py-8"
+  >
+    <nav class="flex flex-col gap-6 mb-8">
+      {navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="font-body text-sm tracking-[0.15em] uppercase text-charcoal-800 hover:text-gold-500 transition-colors"
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+    <a
+      href={CALENDLY_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-primary w-full justify-center text-xs py-4"
+    >
+      Book Free Consultation
+    </a>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+
+  // Close menu on link click
+  menu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => menu.classList.add('hidden'));
+  });
+</script>

@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CareerQuiz from '../components/CareerQuiz';
+---
+
+<Layout
+  title="Career Roadblock Quiz | Pathway Career Coaching"
+  description="Discover your #1 career roadblock in 2 minutes. Free personalized assessment from Erica Peryga."
+>
+  <section class="min-h-screen pt-28 pb-20 relative overflow-hidden"
+    style="background: linear-gradient(160deg, #f8efee 0%, #f2e0de 60%, #e8cbc8 100%);">
+
+    <div class="max-w-2xl mx-auto px-6 text-center mb-12">
+      <div class="flex items-center justify-center gap-3 mb-6">
+        <span class="w-8 h-px bg-gold-500 block"></span>
+        <span class="font-body text-xs tracking-[0.25em] uppercase text-gold-500">Free Assessment</span>
+        <span class="w-8 h-px bg-gold-500 block"></span>
+      </div>
+      <h1 class="font-display text-5xl text-charcoal-900 mb-4">
+        What's Holding You<br />
+        <em class="text-gradient-gold">Back in Your Career?</em>
+      </h1>
+      <p class="font-body text-charcoal-800/60 text-lg">
+        Answer 5 quick questions and get a personalized analysis with Erica's top recommendations—delivered instantly.
+      </p>
+    </div>
+
+    <CareerQuiz client:load />
+  </section>
+</Layout>

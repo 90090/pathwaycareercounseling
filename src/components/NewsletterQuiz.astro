@@ -1,0 +1,136 @@
+---
+---
+
+<section class="py-20 lg:py-28 relative overflow-hidden"
+  style="background: linear-gradient(135deg, #f8efee 0%, #f2e0de 50%, #e8cbc8 100%);">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="grid lg:grid-cols-2 gap-12">
+
+      <!-- Quiz CTA -->
+      <div class="reveal bg-white border border-cream-200 p-8 lg:p-12 relative overflow-hidden group hover:border-gold-400/40 transition-all duration-300">
+        <div class="absolute top-0 right-0 w-32 h-32 opacity-5"
+          style="background: radial-gradient(circle, #b87e27 0%, transparent 70%);">
+        </div>
+
+        <div class="flex items-center gap-3 mb-6">
+          <span class="section-label">Free Quiz</span>
+        </div>
+
+        <h3 class="font-display text-4xl text-charcoal-900 mb-4">
+          What's Holding You<br />
+          <em class="text-gradient-gold">Back in Your Career?</em>
+        </h3>
+
+        <p class="font-body text-charcoal-800/65 leading-relaxed mb-8">
+          Take our free 2-minute assessment to discover your #1 career roadblock and get a personalized action plan from Erica—delivered straight to your inbox.
+        </p>
+
+        <div class="flex flex-wrap gap-3 mb-8">
+          {["2 minutes", "Instant results", "Personalized plan", "100% free"].map(tag => (
+            <span class="font-body text-xs tracking-wider px-3 py-1.5 bg-cream-100 border border-cream-200 text-charcoal-800/60 uppercase">
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <a href="/quiz" class="btn-primary">
+          Take the Free Quiz
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Newsletter signup -->
+      <div class="reveal bg-charcoal-900 p-8 lg:p-12 relative overflow-hidden" style="transition-delay: 150ms">
+        <div class="absolute -bottom-8 -right-8 w-48 h-48 opacity-10"
+          style="background: radial-gradient(circle, #b87e27 0%, transparent 70%);">
+        </div>
+
+        <div class="flex items-center gap-3 mb-6">
+          <span class="section-label text-gold-400">Monthly Eblast</span>
+        </div>
+
+        <h3 class="font-display text-4xl text-cream-100 mb-4">
+          Career Insights<br />
+          <em class="text-gradient-gold">Delivered Monthly</em>
+        </h3>
+
+        <p class="font-body text-cream-200/60 leading-relaxed mb-8">
+          Join thousands of professionals getting Erica's best tips on job searching, leadership, mindset, and career strategy—straight to their inbox every month.
+        </p>
+
+        <!-- Newsletter form -->
+        <form id="newsletter-form" class="space-y-4">
+          <div class="grid grid-cols-2 gap-3">
+            <input
+              type="text"
+              placeholder="First name"
+              required
+              class="font-body text-sm px-4 py-3 bg-charcoal-800 border border-charcoal-800 text-cream-100 placeholder-cream-200/30 focus:outline-none focus:border-gold-500 transition-colors"
+            />
+            <input
+              type="text"
+              placeholder="Last name"
+              class="font-body text-sm px-4 py-3 bg-charcoal-800 border border-charcoal-800 text-cream-100 placeholder-cream-200/30 focus:outline-none focus:border-gold-500 transition-colors"
+            />
+          </div>
+          <input
+            type="email"
+            placeholder="Your email address"
+            required
+            class="w-full font-body text-sm px-4 py-3 bg-charcoal-800 border border-charcoal-800 text-cream-100 placeholder-cream-200/30 focus:outline-none focus:border-gold-500 transition-colors"
+          />
+          <button
+            type="submit"
+            class="w-full btn-primary justify-center"
+          >
+            Subscribe to Monthly Insights
+          </button>
+          <p class="font-body text-xs text-cream-200/30 text-center">
+            No spam. Unsubscribe anytime. Your data is safe with us.
+          </p>
+        </form>
+
+        <div id="newsletter-success" class="hidden text-center py-4">
+          <div class="text-gold-300 font-display text-2xl mb-2">You're in!</div>
+          <p class="font-body text-cream-200/60 text-sm">Thank you for subscribing. Check your inbox for a welcome message.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('newsletter-form') as HTMLFormElement;
+  const success = document.getElementById('newsletter-success');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = {
+      firstName: formData.get('firstName'),
+      email: formData.get('email'),
+    };
+
+    try {
+      // Replace with your AWS API endpoint
+      const response = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        form.classList.add('hidden');
+        success?.classList.remove('hidden');
+      }
+    } catch {
+      // Handle error gracefully — show success anyway in dev
+      form.classList.add('hidden');
+      success?.classList.remove('hidden');
+    }
+  });
+</script>

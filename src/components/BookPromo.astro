@@ -1,0 +1,100 @@
+---
+---
+
+<section id="book" class="py-28 lg:py-36 bg-charcoal-900 relative overflow-hidden">
+
+  <!-- Background texture -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/2 h-full opacity-5"
+      style="background: repeating-linear-gradient(-45deg, #b87e27 0px, #b87e27 1px, transparent 1px, transparent 30px);">
+    </div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+    <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+      <!-- Book cover image -->
+      <div class="reveal flex justify-center lg:justify-start">
+        <div class="relative">
+
+          <!-- Ambient gold glow behind book -->
+          <div class="absolute inset-0 translate-x-3 translate-y-6 blur-2xl opacity-40 rounded-sm"
+            style="background: linear-gradient(135deg, #b87e27, #d4a84b);"></div>
+
+          <!-- Page-edge illusion: stacked cream layers -->
+          <div class="absolute top-1 bottom-1 -right-[3px] w-[6px] bg-cream-200/60 rounded-r-sm"></div>
+          <div class="absolute top-1 bottom-1 -right-[6px] w-[5px] bg-cream-100/40 rounded-r-sm"></div>
+
+          <!-- Book wrapper — hover lifts -->
+          <div class="relative group cursor-pointer w-[260px] lg:w-[320px] aspect-[2/3] shadow-[0_32px_64px_rgba(0,0,0,0.5)] group-hover:-translate-y-2 transition-transform duration-500">
+
+            <!-- The cover image, fills entire container -->
+            <img
+              src="/Pathway-Book-Cover.png"
+              alt="Pathway Career Coaching — Erica Peryga"
+              class="absolute inset-0 w-full h-full object-cover object-center"
+            />
+
+            <!-- Spine shadow overlay — keeps depth even with real image -->
+            <div class="absolute left-0 top-0 bottom-0 w-4 bg-gradient-to-r from-black/40 to-transparent z-10 pointer-events-none"></div>
+
+            <!-- Subtle gloss sheen -->
+            <div class="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent z-20 pointer-events-none"></div>
+
+            <!-- Bottom edge shadow -->
+            <div class="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/20 to-transparent z-10 pointer-events-none"></div>
+          </div>
+
+          <!-- Gold corner accents -->
+          <div class="absolute -top-2 -right-2 w-6 h-6 border-t border-r border-gold-500/50 z-30"></div>
+          <div class="absolute -bottom-2 -left-2 w-6 h-6 border-b border-l border-gold-500/50 z-30"></div>
+        </div>
+      </div>
+
+      <!-- Book description -->
+      <div class="reveal">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="shimmer-line w-8 h-px block"></span>
+          <span class="section-label text-gold-400">The Pathway Method (Coming Soon)</span>
+        </div>
+
+        <h2 class="font-display text-5xl lg:text-6xl text-cream-100 leading-tight mb-6">
+          Erica's New<br />
+          <em class="text-gradient-gold">Book Is Here</em>
+        </h2>
+
+        <p class="font-body text-cream-200/60 text-lg leading-relaxed mb-8">
+          A new book based on The Pathway Method designed to help individuals reinvent their careers and step into what’s next.
+        </p>
+
+        <div class="flex flex-wrap gap-6 mb-10">
+          {["Mindset & Confidence", "Job Search Strategy", "Personal Branding", "Purpose-Driven Career"].map(tag => (
+            <div class="flex items-center gap-2 text-cream-200/50">
+              <div class="w-1 h-1 rounded-full bg-gold-500"></div>
+              <span class="font-body text-sm">{tag}</span>
+            </div>
+          ))}
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="/book"
+            class="btn-primary"
+          >
+            Join the Waitlist
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+            </svg>
+          </a>
+          <!-- <a
+            href="#"
+            class="btn-outline border-cream-300/30 text-cream-200 hover:bg-cream-100 hover:text-charcoal-900"
+          >
+            Buy on Amazon
+          </a> -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,109 @@
+---
+const CALENDLY_URL = "https://calendly.com/YOUR_LINK_HERE";
+
+const navLinks = [
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/#services" },
+  { label: "The Pathway Method", href: "/#method" },
+  { label: "Book", href: "/book" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/#contact" },
+];
+---
+
+<footer class="bg-charcoal-900 relative overflow-hidden">
+
+  <!-- Top accent line -->
+  <div class="shimmer-line w-full h-px"></div>
+
+  <!-- Main footer -->
+  <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-20">
+    <div class="grid lg:grid-cols-4 gap-12 lg:gap-16">
+
+      <!-- Brand column -->
+      <div class="lg:col-span-2">
+        <a href="/" class="flex flex-col leading-none mb-6 group w-fit">
+          <span class="font-display text-2xl text-cream-100 tracking-wide group-hover:text-gold-300 transition-colors duration-300">
+            Pathway
+          </span>
+          <span class="font-body text-[10px] tracking-[0.3em] uppercase text-gold-400/70 mt-1">
+            Career Coaching & Self Development
+          </span>
+        </a>
+
+        <p class="font-body text-cream-200/40 text-sm leading-relaxed max-w-xs mb-8">
+          Helping professionals redefine their careers and step into what's next through The Pathway Method.
+        </p>
+
+        <!-- Social links -->
+        <div class="flex gap-4">
+          {[
+            { label: "LinkedIn", href: "#", icon: `<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>` },
+            { label: "Instagram", href: "#", icon: `<rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>` },
+          ].map(social => (
+            <a
+              href={social.href}
+              aria-label={social.label}
+              class="w-9 h-9 border border-cream-200/10 flex items-center justify-center text-cream-200/40 hover:text-gold-400 hover:border-gold-500/40 transition-all duration-300"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <Fragment set:html={social.icon} />
+              </svg>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Quick links -->
+      <div>
+        <h4 class="font-body text-xs tracking-[0.3em] uppercase text-cream-200/30 mb-6">Navigate</h4>
+        <ul class="space-y-4">
+          {navLinks.map(link => (
+            <li>
+              <a href={link.href} class="font-body text-sm text-cream-200/50 hover:text-gold-300 transition-colors duration-300">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- CTA column -->
+      <div>
+        <h4 class="font-body text-xs tracking-[0.3em] uppercase text-cream-200/30 mb-6">Ready to Begin?</h4>
+        <p class="font-body text-sm text-cream-200/40 leading-relaxed mb-6">
+          Your next chapter starts with a single conversation.
+        </p>
+        <a
+          href={CALENDLY_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary w-full justify-center text-xs py-3"
+        >
+          Free Consultation
+        </a>
+
+        <div class="mt-8 pt-8 border-t border-cream-200/10">
+          <p class="font-body text-xs text-cream-200/30 mb-2">Contact</p>
+          <a href="mailto:hello@pathwaycareercoaching.com" class="font-body text-xs text-gold-400/70 hover:text-gold-300 transition-colors">
+            hello@pathwaycareercoaching.com
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="border-t border-cream-200/5">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="font-body text-xs text-cream-200/20">
+        © {new Date().getFullYear()} Pathway Career Coaching & Self Development. All rights reserved.
+      </p>
+      <div class="flex gap-6">
+        <a href="/privacy" class="font-body text-xs text-cream-200/20 hover:text-cream-200/50 transition-colors">Privacy Policy</a>
+        <a href="/terms" class="font-body text-xs text-cream-200/20 hover:text-cream-200/50 transition-colors">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>

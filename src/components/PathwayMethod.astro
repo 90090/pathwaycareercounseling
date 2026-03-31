@@ -1,0 +1,94 @@
+---
+const steps = [
+  {
+    title: "Clarity",
+    description: "Uncover your unique strengths, story, and professional identity. We dig deep to surface what makes you irreplaceable—and help you own it fully.",
+    icon: `<path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm1-11v-2a1 1 0 0 0-2 0v3a1 1 0 0 0 .29.71l2 2a1 1 0 0 0 1.42-1.42z"/>`,
+  },
+  {
+    title: "Positioning",
+    description: "Build a data-driven job search plan tailored to your goals. Resume, LinkedIn, networking, and interview prep—all aligned to your target destination.",
+    icon: `<path d="M3 3h18v18H3zM9 9h6v6H9z"/><path d="M9 3v6M15 3v6M3 9h6M15 9h6M9 15v6M15 15v6M3 15h6M15 15h6"/>`,
+  },
+  {
+    title: "Execution",
+    description: "Mindset is everything. We work on the inner game—overcoming imposter syndrome, rejection resilience, and the beliefs holding you back from bold action.",
+    icon: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,
+  },
+  {
+    title: "Results",
+    description: "Execute with confidence. Accountability, momentum, and a coach in your corner—until you land the role and life that lights you up.",
+    icon: `<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>`,
+  },
+];
+---
+
+<section id="pathway" class="relative pt-24 overflow-hidden"
+  style="background: linear-gradient(180deg, #f2e0de 0%, #f8efee 100%);">
+
+  <!-- Background decorative text -->
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+    <span class="font-display text-[200px] font-700 text-gold-500/[0.03] tracking-tight select-none whitespace-nowrap">
+      PATHWAY
+    </span>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+
+    <!-- Section header -->
+    <div class="max-w-2xl mb-20 reveal">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="shimmer-line w-8 h-px block"></span>
+        <span class="section-label">Signature Framework</span>
+      </div>
+      <h2 class="font-display text-5xl lg:text-6xl text-charcoal-900 leading-tight mb-6">
+        The <em class="text-gradient-gold">Pathway Method</em>
+      </h2>
+      <p class="font-body text-charcoal-800/65 text-lg leading-relaxed">
+        A proven four-phase framework that transforms not just your career—but your confidence, clarity, and sense of purpose. Because the job is only the beginning.
+      </p>
+    </div>
+
+    <!-- Steps grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-0.5">
+      {steps.map((step, i) => (
+        <div
+          class="reveal bg-cream-100 p-8 lg:p-10 group hover:bg-charcoal-900 transition-all duration-500 cursor-default"
+          style={`transition-delay: ${i * 100}ms`}
+        >
+
+          <!-- Icon -->
+          <div class="w-10 h-10 mb-6 text-gold-500 group-hover:text-gold-300 transition-colors duration-500">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <Fragment set:html={step.icon} />
+            </svg>
+          </div>
+
+          <h3 class="font-display text-2xl text-charcoal-900 group-hover:text-cream-100 transition-colors duration-500 mb-4">
+            {step.title}
+          </h3>
+          <p class="font-body text-sm text-charcoal-800/65 group-hover:text-cream-200/70 transition-colors duration-500 leading-relaxed">
+            {step.description}
+          </p>
+
+          <!-- Bottom accent line -->
+          <div class="mt-8 w-0 h-px bg-gold-500 group-hover:w-full transition-all duration-500"></div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="mt-16 text-center reveal">
+      <p class="font-display italic text-xl text-charcoal-800/60 mb-6">
+        "Your next chapter starts here."
+      </p>
+      <a href="https://calendly.com/YOUR_LINK_HERE" target="_blank" rel="noopener noreferrer" class="btn-primary">
+        Start Your Pathway Today
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>

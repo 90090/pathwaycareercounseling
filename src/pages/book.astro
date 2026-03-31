@@ -1,0 +1,184 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const CALENDLY_URL = "https://calendly.com/YOUR_LINK_HERE";
+const AMAZON_URL = "#"; // Replace with actual Amazon link
+---
+
+<Layout
+  title="The Book | Pathway Career Coaching"
+  description="Erica Peryga's book on career transformation, purpose-driven work, and The Pathway Method."
+>
+
+  <!-- Book Hero -->
+  <section class="min-h-screen flex items-center pt-20 relative overflow-hidden"
+    style="background: linear-gradient(150deg, #1a1410 0%, #2c2420 40%, #1a1410 100%);">
+
+    <!-- Gold ambient glow -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] opacity-15"
+        style="background: radial-gradient(ellipse, #b87e27 0%, transparent 65%);">
+      </div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-20 w-full">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Book cover -->
+        <div class="flex justify-center lg:justify-end order-2 lg:order-1">
+          <div class="relative">
+
+            <!-- Ambient glow -->
+            <div class="absolute inset-0 translate-x-4 translate-y-8 blur-3xl opacity-50 rounded-sm"
+              style="background: linear-gradient(135deg, #b87e27, #d4a84b);">
+            </div>
+
+            <!-- Page-edge illusion -->
+            <div class="absolute top-1 bottom-1 -right-[3px] w-[6px] bg-cream-200/50 rounded-r-sm"></div>
+            <div class="absolute top-1 bottom-1 -right-[6px] w-[5px] bg-cream-100/30 rounded-r-sm"></div>
+
+            <!-- Book wrapper -->
+            <div class="relative group w-[280px] lg:w-[360px] shadow-[0_40px_80px_rgba(0,0,0,0.6)] group-hover:-translate-y-2 transition-transform duration-500 cursor-pointer"
+              style="aspect-ratio: 2/3;">
+
+              <img
+                src="/Pathway-Book-Cover.png"
+                alt="Pathway Career Coaching — Erica Peryga"
+                class="absolute inset-0 w-full h-full object-cover object-center"
+              />
+
+              <!-- Spine shadow -->
+              <div class="absolute left-0 top-0 bottom-0 w-5 bg-gradient-to-r from-black/40 to-transparent z-10 pointer-events-none"></div>
+              <!-- Gloss sheen -->
+              <div class="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent z-20 pointer-events-none"></div>
+              <!-- Bottom edge -->
+              <div class="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/25 to-transparent z-10 pointer-events-none"></div>
+            </div>
+
+            <!-- Gold corner accents -->
+            <div class="absolute -top-2 -right-2 w-8 h-8 border-t-2 border-r-2 border-gold-500/50 z-30"></div>
+            <div class="absolute -bottom-2 -left-2 w-8 h-8 border-b-2 border-l-2 border-gold-500/50 z-30"></div>
+          </div>
+        </div>
+
+        <!-- Book info -->
+        <div class="order-1 lg:order-2">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="w-8 h-px block" style="background: linear-gradient(90deg, #d4a84b, #b87e27);"></span>
+            <span class="font-body text-xs tracking-[0.25em] uppercase text-gold-400">New Release</span>
+          </div>
+
+          <h1 class="font-display text-5xl lg:text-6xl text-cream-100 leading-tight mb-6">
+            The Pathway Method<br />
+            <em class="text-gradient-gold text-4xl">The Proven System for Reinventing Your Career and What Comes Next</em>
+          </h1>
+
+          <p class="font-body text-cream-200/60 text-lg leading-relaxed mb-8 max-w-md">
+            In her debut book, Erica Peryga takes you behind the methodology that has transformed hundreds of careers. Drawing from 15+ years of coaching and research, this is the guide she wishes she had—and the one her clients have been asking for.
+          </p>
+
+          <!-- Book highlights -->
+          <div class="space-y-4 mb-10">
+            {[
+              "The complete Pathway Method, step by step",
+              "Mindset tools to overcome imposter syndrome",
+              "Proven job search systems for the modern market",
+              "Exercises to clarify your purpose and build your brand",
+              "Tech industry–specific strategies and insights",
+            ].map(point => (
+              <div class="flex items-start gap-3 text-cream-200/70">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b87e27" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-0.5">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+                <span class="font-body text-sm">{point}</span>
+              </div>
+            ))}
+          </div>
+
+          <!-- Buy buttons -->
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href={AMAZON_URL} target="_blank" rel="noopener noreferrer" class="btn-primary">
+              Buy on Amazon
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/>
+              </svg>
+            </a>
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer"
+              class="btn-outline border-cream-200/20 text-cream-200 hover:bg-cream-100 hover:text-charcoal-900">
+              Work With Erica
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About the Book -->
+  <section class="py-28 bg-cream-100">
+    <div class="max-w-4xl mx-auto px-6 lg:px-12">
+
+      <div class="text-center mb-16">
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <span class="w-8 h-px bg-gold-500 block"></span>
+          <span class="font-body text-xs tracking-[0.25em] uppercase text-gold-500">About the Book</span>
+          <span class="w-8 h-px bg-gold-500 block"></span>
+        </div>
+        <h2 class="font-display text-4xl lg:text-5xl text-charcoal-900 mb-6">
+          More Than a Career Guide.<br />
+          <em class="text-gradient-gold">A Life Guide.</em>
+        </h2>
+      </div>
+
+      <div class="prose prose-lg max-w-none">
+        <div class="grid md:grid-cols-2 gap-12">
+          <div class="space-y-5 font-body text-charcoal-800/70 leading-relaxed">
+            <p>
+              What if the biggest thing standing between you and your dream career isn't your resume—it's your beliefs about what you deserve?
+            </p>
+            <p>
+              In this groundbreaking book, Erica Peryga reveals that true career transformation starts from the inside out. Through the lens of The Pathway Method, she guides you through a proven process of self-discovery, strategic planning, and courageous action.
+            </p>
+            <p>
+              Whether you're just starting out, pivoting industries, or ready for your next level of leadership, this book gives you the exact tools, frameworks, and mindset shifts you need to build a career that doesn't just pay the bills—it fuels your soul.
+            </p>
+          </div>
+          <div class="space-y-5 font-body text-charcoal-800/70 leading-relaxed">
+            <p>
+              Erica draws on over 15 years of coaching hundreds of professionals—from recent graduates to C-suite executives—and shares the patterns, breakthroughs, and hard-won wisdom from thousands of coaching hours.
+            </p>
+            <p>
+              This isn't a book of platitudes. It's a practical, personal, and powerful guide backed by real data, real stories, and Erica's signature blend of strategy and heart.
+            </p>
+            <p class="font-display italic text-xl text-charcoal-900">
+              "Your career should be your pathway to purpose—and this book will show you exactly how to walk it."
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Book CTA -->
+  <section class="py-20 text-center"
+    style="background: linear-gradient(135deg, #f2e0de 0%, #e8cbc8 100%);">
+    <div class="max-w-xl mx-auto px-6">
+      <h2 class="font-display text-4xl text-charcoal-900 mb-4">
+        Ready to Walk Your Pathway?
+      </h2>
+      <p class="font-body text-charcoal-800/60 mb-8">
+        Get the book—or take the next step with 1:1 coaching from Erica herself.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={AMAZON_URL} target="_blank" rel="noopener noreferrer" class="btn-primary">
+          Buy the Book
+        </a>
+        <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" class="btn-outline">
+          Book a Free Coaching Call
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

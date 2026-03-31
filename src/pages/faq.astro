@@ -1,0 +1,195 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const CALENDLY_URL = "https://calendly.com/YOUR_LINK_HERE";
+
+const faqs = [
+  {
+    category: "Getting Started",
+    questions: [
+      {
+        q: "How do I know if coaching is right for me?",
+        a: "If you're feeling stuck, ready for a change, or looking to step into your next level, coaching can help you gain clarity, direction, and momentum. The best first step is a 30-minute strategy call, where we'll explore your goals, your current challenges, and whether working together is the right fit.",
+      },
+      {
+        q: "What makes Erica different from other career coaches?",
+        a: "Erica brings over 15 years of experience in career strategy and leadership development, combined with a highly personalized, results-driven approach. Her signature framework, The Pathway Method, goes beyond traditional coaching by integrating strategy, positioning, and mindset—helping clients not only secure opportunities, but step confidently into what's next.",
+      },
+      {
+        q: "How long does coaching typically take?",
+        a: "Timelines vary based on your goals. Some clients see meaningful progress in a few weeks, while others work together over several months for deeper career transformation. During your strategy call, we'll map out a realistic timeline based on your specific objectives.",
+      },
+    ],
+  },
+  {
+    category: "Services & Pricing",
+    questions: [
+      {
+        q: "What services do you offer?",
+        a: null,
+        bullets: [
+          "Career Coaching",
+          "Resume & LinkedIn Optimization",
+          "Interview Coaching",
+          "Career Pivot Strategy",
+          "Leadership & Executive Coaching",
+          "The Pathway Intensive (VIP Experience)",
+        ],
+        bulletNote: "Each engagement is tailored to your goals and level of support needed.",
+      },
+      {
+        q: "Do you specialize in any industries?",
+        a: "Erica works with professionals across a wide range of industries and career stages. Her approach focuses on strategy and positioning, making it adaptable whether you're advancing within your field or transitioning into something new.",
+      },
+      {
+        q: "How much does coaching cost?",
+        a: "Investment varies depending on the level of support and engagement. Options range from focused sessions to comprehensive coaching experiences. The best way to determine fit and pricing is through a strategy call, where we'll align on your goals and the right level of support.",
+      },
+      {
+        q: "What is a strategy call?",
+        a: "A strategy call is a focused 30-minute conversation designed to:",
+        bullets: [
+          "Understand where you are",
+          "Clarify what you're working toward",
+          "Identify what's currently holding you back",
+        ],
+        bulletNote: "From there, we'll determine the best next steps and whether working together is the right fit.",
+      },
+    ],
+  },
+  {
+    category: "The Pathway Method",
+    questions: [
+      {
+        q: "What is The Pathway Method?",
+        a: "The Pathway Method is Erica's signature framework designed to guide clients through career clarity, positioning, and execution. It focuses on both:",
+        bullets: [
+          "External strategy (resume, job search, positioning)",
+          "Internal alignment (confidence, mindset, decision-making)",
+        ],
+        bulletNote: "Because lasting career growth requires both.",
+      },
+      {
+        q: "Is this more strategy or mindset focused?",
+        a: "Both—by design. Career success isn't just about knowing what to do. It's about how you show up. The Pathway Method integrates both strategy and mindset to ensure you're not only prepared—but confident and aligned.",
+      },
+    ],
+  },
+  {
+    category: "Logistics",
+    questions: [
+      {
+        q: "How do sessions work?",
+        a: "All sessions are conducted virtually via video. Sessions are typically 45–60 minutes and scheduled in advance. Depending on your program, you may also receive additional support, resources, and guidance between sessions.",
+      },
+      {
+        q: "Do you offer group coaching or workshops?",
+        a: "Yes. Erica works with individuals, teams, and organizations through:",
+        bullets: [
+          "1:1 coaching",
+          "Group programs",
+          "Workshops and training",
+          "Speaking engagements",
+        ],
+        bulletNote: "Please reach out for more information on group or corporate opportunities.",
+      },
+    ],
+  },
+];
+---
+
+<Layout
+  title="FAQ | Pathway Career Coaching"
+  description="Frequently asked questions about working with Erica Peryga and Pathway Career Coaching & Self Development."
+>
+  <!-- Page Hero -->
+  <section class="pt-36 pb-20 relative overflow-hidden"
+    style="background: linear-gradient(160deg, #f8efee 0%, #f2e0de 60%, #e8cbc8 100%);">
+    <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <div class="flex items-center justify-center gap-3 mb-6">
+        <span class="w-8 h-px bg-gold-500 block"></span>
+        <span class="font-body text-xs tracking-[0.25em] uppercase text-gold-500">FAQ</span>
+        <span class="w-8 h-px bg-gold-500 block"></span>
+      </div>
+      <h1 class="font-display text-5xl lg:text-6xl text-charcoal-900 mb-6">
+        Frequently Asked<br />
+        <em class="text-gradient-gold">Questions</em>
+      </h1>
+      <p class="font-body text-charcoal-800/60 text-lg max-w-xl mx-auto">
+        Everything you need to know about working with Erica and how coaching works.
+        Can't find your answer? <a href="/#contact" class="text-gold-500 hover:text-gold-600 underline">Send us a message.</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ Content -->
+  <section class="py-20 lg:py-28 bg-cream-100">
+    <div class="max-w-3xl mx-auto px-6 lg:px-12 space-y-16">
+
+      {faqs.map((section) => (
+        <div>
+          <h2 class="font-display text-2xl text-charcoal-900 mb-8 pb-4 border-b border-cream-200 flex items-center gap-4">
+            <span class="w-6 h-px bg-gold-500 block shrink-0"></span>
+            {section.category}
+          </h2>
+
+          <div class="space-y-0 divide-y divide-cream-200">
+            {section.questions.map((item) => (
+              <details class="group py-6 cursor-pointer list-none">
+                <summary class="flex items-start justify-between gap-4 font-display text-xl text-charcoal-900 group-hover:text-gold-600 transition-colors duration-300 marker:hidden list-none">
+                  {item.q}
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 mt-1 text-gold-500 transition-transform duration-300 group-open:rotate-45">
+                    <line x1="12" x2="12" y1="5" y2="19"/><line x1="5" x2="19" y1="12" y2="12"/>
+                  </svg>
+                </summary>
+
+                <div class="mt-4 font-body text-charcoal-800/65 leading-relaxed space-y-3">
+                  {item.a && <p>{item.a}</p>}
+                  {item.bullets && (
+                    <ul class="space-y-2">
+                      {item.bullets.map((b) => (
+                        <li class="flex items-start gap-3">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gold-500 shrink-0 mt-1">
+                            <polyline points="20 6 9 17 4 12"/>
+                          </svg>
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {item.bulletNote && <p>{item.bulletNote}</p>}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      ))}
+
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="py-20 bg-charcoal-900 text-center">
+    <div class="max-w-xl mx-auto px-6">
+      <h2 class="font-display text-4xl text-cream-100 mb-4">
+        Still have questions?
+      </h2>
+      <p class="font-body text-cream-200/50 mb-8">
+        The fastest answer is a free 30-minute call. No pressure, just a conversation.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" class="btn-primary">
+          Book a Free Call
+        </a>
+        <a href="/#contact" class="btn-outline border-cream-200/20 text-cream-200 hover:bg-cream-100 hover:text-charcoal-900">
+          Send a Message
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  details summary::-webkit-details-marker { display: none; }
+  details summary { list-style: none; }
+</style>

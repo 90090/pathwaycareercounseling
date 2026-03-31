@@ -1,0 +1,86 @@
+---
+const testimonials = [
+  {
+    quote: "Erica completely transformed how I see myself professionally. I went from feeling stuck to landing my dream role at a Fortune 500 tech company—in 6 weeks. The Pathway Method is real.",
+    author: "Sarah M.",
+    role: "Senior Product Manager, Tech Industry",
+    result: "Landed role in 6 weeks",
+  },
+  {
+    quote: "I was terrified of interviews. After working with Erica I walked into every conversation with confidence, a clear story, and the tools to back it up. I got three offers and negotiated 30% above asking.",
+    author: "Marcus T.",
+    role: "Software Engineer → Engineering Lead",
+    result: "30% salary increase",
+  },
+  {
+    quote: "Pivoting careers at 40 felt impossible. Erica made it feel inevitable. She helped me see my transferable skills, rebuild my brand, and land in a field I actually love.",
+    author: "Jennifer L.",
+    role: "Teacher → UX Designer",
+    result: "Successful career pivot",
+  },
+  {
+    quote: "The mindset work was what I didn't know I needed. Erica goes so far beyond resume help—she changes how you show up. I'm a better leader because of our work together.",
+    author: "David K.",
+    role: "Director of Operations",
+    result: "Promoted within 3 months",
+  },
+];
+---
+
+<section class="py-28 lg:py-36 relative overflow-hidden"
+  style="background: linear-gradient(180deg, #f2e0de 0%, #f8efee 100%);">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-20">
+      <div class="max-w-xl reveal">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="shimmer-line w-8 h-px block"></span>
+          <span class="section-label">Client Stories</span>
+        </div>
+        <h2 class="font-display text-5xl lg:text-6xl text-charcoal-900 leading-tight">
+          Real People.<br />
+          <em class="text-gradient-gold">Real Results.</em>
+        </h2>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 stagger-children">
+      {testimonials.map((t, i) => (
+        <div class="reveal bg-white border border-cream-200 p-8 lg:p-10 relative group hover:border-gold-400/40 hover:shadow-xl hover:shadow-gold-500/5 transition-all duration-300">
+          <!-- Quote mark -->
+          <div class="absolute top-6 right-8 font-display text-8xl leading-none text-gold-500/10 group-hover:text-gold-500/20 transition-colors duration-300 select-none">
+            "
+          </div>
+
+          <!-- Result badge -->
+          <div class="inline-flex items-center gap-2 mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="#b87e27" stroke="none">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+            <span class="font-body text-xs tracking-widest uppercase text-gold-500">{t.result}</span>
+          </div>
+
+          <!-- Quote text -->
+          <p class="font-body text-charcoal-800/75 leading-relaxed mb-8 text-[15px] relative z-10">
+            "{t.quote}"
+          </p>
+
+          <!-- Author -->
+          <div class="flex items-center gap-4 pt-6 border-t border-cream-200">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gold-300 to-gold-600 flex items-center justify-center shrink-0">
+              <span class="font-display text-cream-50 font-600 text-sm">
+                {t.author.charAt(0)}
+              </span>
+            </div>
+            <div>
+              <div class="font-body font-500 text-charcoal-900 text-sm">{t.author}</div>
+              <div class="font-body text-xs text-charcoal-800/50">{t.role}</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

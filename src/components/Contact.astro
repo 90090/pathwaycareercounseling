@@ -1,0 +1,212 @@
+---
+const CALENDLY_URL = "https://calendly.com/YOUR_LINK_HERE";
+---
+
+<section id="contact" class="py-28 lg:py-36 relative overflow-hidden"
+  style="background: linear-gradient(180deg, #f2e0de 0%, #f8efee 100%);">
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-20 reveal">
+      <div class="flex items-center justify-center gap-3 mb-6">
+        <span class="shimmer-line w-8 h-px block"></span>
+        <span class="section-label">Get In Touch</span>
+        <span class="shimmer-line w-8 h-px block"></span>
+      </div>
+      <h2 class="font-display text-5xl lg:text-6xl text-charcoal-900 leading-tight mb-6">
+        Ready to Start Your<br />
+        <em class="text-gradient-gold">Next Chapter?</em>
+      </h2>
+      <p class="font-body text-charcoal-800/60 text-lg">
+        The best next step is a conversation. Book your free 30-minute discovery call below—or send us a message and we'll get back to you within 24 hours.
+      </p>
+    </div>
+
+    <!-- Primary CTA: Calendly -->
+    <div class="reveal mb-16">
+      <div class="bg-charcoal-900 p-8 lg:p-14 text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5"
+          style="background: radial-gradient(ellipse at center, #b87e27 0%, transparent 60%);">
+        </div>
+        <div class="relative z-10">
+          <div class="flex items-center justify-center gap-3 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b87e27" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/>
+            </svg>
+            <span class="section-label text-gold-400">Preferred Option</span>
+          </div>
+          <h3 class="font-display text-4xl lg:text-5xl text-cream-100 mb-4">
+            Book a Free 30-Minute<br />
+            <em class="text-gradient-gold">Discovery Call</em>
+          </h3>
+          <p class="font-body text-cream-200/50 max-w-md mx-auto mb-10">
+            We'll explore your goals, your challenges, and how The Pathway Method can help you get there. Zero pressure. Zero commitment.
+          </p>
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary text-base px-10 py-5"
+          >
+            Schedule Your Free Call on Calendly
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Or divider -->
+    <div class="flex items-center gap-4 mb-16 reveal">
+      <div class="flex-1 h-px bg-gold-500/20"></div>
+      <span class="font-body text-xs tracking-[0.3em] uppercase text-charcoal-800/30">Or send a message</span>
+      <div class="flex-1 h-px bg-gold-500/20"></div>
+    </div>
+
+    <!-- Contact form -->
+    <div class="max-w-2xl mx-auto reveal">
+      <form id="contact-form" class="space-y-6">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label class="font-body text-xs tracking-widest uppercase text-charcoal-800/50 block mb-2">
+              First Name *
+            </label>
+            <input
+              type="text"
+              name="firstName"
+              required
+              class="w-full font-body text-sm px-5 py-4 bg-white border border-cream-200 text-charcoal-900 placeholder-charcoal-800/30 focus:outline-none focus:border-gold-500 transition-colors"
+              placeholder="Erica"
+            />
+          </div>
+          <div>
+            <label class="font-body text-xs tracking-widest uppercase text-charcoal-800/50 block mb-2">
+              Last Name
+            </label>
+            <input
+              type="text"
+              name="lastName"
+              class="w-full font-body text-sm px-5 py-4 bg-white border border-cream-200 text-charcoal-900 placeholder-charcoal-800/30 focus:outline-none focus:border-gold-500 transition-colors"
+              placeholder="Peryga"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label class="font-body text-xs tracking-widest uppercase text-charcoal-800/50 block mb-2">
+            Email Address *
+          </label>
+          <input
+            type="email"
+            name="email"
+            required
+            class="w-full font-body text-sm px-5 py-4 bg-white border border-cream-200 text-charcoal-900 placeholder-charcoal-800/30 focus:outline-none focus:border-gold-500 transition-colors"
+            placeholder="you@example.com"
+          />
+        </div>
+
+        <div>
+          <label class="font-body text-xs tracking-widest uppercase text-charcoal-800/50 block mb-2">
+            I'm Interested In
+          </label>
+          <select
+            name="service"
+            class="w-full font-body text-sm px-5 py-4 bg-white border border-cream-200 text-charcoal-900 focus:outline-none focus:border-gold-500 transition-colors appearance-none"
+          >
+            <option value="">Select a service...</option>
+            <option value="career-coaching">Career Coaching</option>
+            <option value="resume-linkedin">Resume & LinkedIn Optimization</option>
+            <option value="interview-prep">Interview Prep & Coaching</option>
+            <option value="career-pivot">Career Pivot Strategy</option>
+            <option value="leadership">Leadership & Executive Coaching</option>
+            <option value="other">Other / Not Sure</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="font-body text-xs tracking-widest uppercase text-charcoal-800/50 block mb-2">
+            Tell Erica About Your Situation *
+          </label>
+          <textarea
+            name="message"
+            required
+            rows={5}
+            class="w-full font-body text-sm px-5 py-4 bg-white border border-cream-200 text-charcoal-900 placeholder-charcoal-800/30 focus:outline-none focus:border-gold-500 transition-colors resize-none"
+            placeholder="What are you hoping to achieve? Where are you in your career journey?"
+          ></textarea>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <input type="checkbox" name="subscribe" id="subscribe-check" class="mt-1 accent-gold-500" />
+          <label for="subscribe-check" class="font-body text-sm text-charcoal-800/60 cursor-pointer">
+            Subscribe me to Erica's monthly career tips and insights
+          </label>
+        </div>
+
+        <button
+          type="submit"
+          id="contact-submit"
+          class="w-full btn-primary justify-center text-sm py-5"
+        >
+          Send Message
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>
+          </svg>
+        </button>
+      </form>
+
+      <!-- Success state -->
+      <div id="contact-success" class="hidden text-center py-12">
+        <div class="w-16 h-16 rounded-full bg-gold-500/10 flex items-center justify-center mx-auto mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#b87e27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <h3 class="font-display text-3xl text-charcoal-900 mb-3">Message Received!</h3>
+        <p class="font-body text-charcoal-800/60">
+          Thank you for reaching out. Erica or a member of her team will be in touch within 24 hours.
+        </p>
+        <p class="font-body text-sm text-gold-500 mt-4">
+          In the meantime, you can also
+          <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" class="underline hover:text-gold-600">
+            book your free call directly.
+          </a>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const success = document.getElementById('contact-success');
+  const submitBtn = document.getElementById('contact-submit') as HTMLButtonElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      // Replace with your AWS API Gateway endpoint
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      form.classList.add('hidden');
+      success?.classList.remove('hidden');
+    } catch {
+      // Show success in dev — wire real endpoint on AWS
+      form.classList.add('hidden');
+      success?.classList.remove('hidden');
+    }
+  });
+</script>
