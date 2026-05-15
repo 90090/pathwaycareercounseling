@@ -3,57 +3,65 @@ const CALENDLY_URL = "https://calendly.com/YOUR_LINK_HERE";
 
 const services = [
   {
-    tag: "VIP Experience",
-    title: "The Pathway Intensive",
-    subtitle: "Your Career, Reimagined—Fast",
-    description: "A high-touch, immersive experience designed for professionals ready to make a powerful move—whether that's pivoting, leveling up, or stepping into something new.  This is a focused, results-driven engagement built to create clarity, momentum, and real outcomes.",
-    features: ["Personalized roadmap", "Accountability check-ins", "Goal setting & tracking", "Mindset & confidence work"],
-    accent: true,
-  },
-  {
     tag: "Most Popular",
     title: "Career Coaching",
-    subtitle: "Comprehensive 1:1 Coaching",
-    description: "Personalized coaching that addresses your unique career challenges. From goal clarity to action planning, we work together to navigate every step of your journey.",
-    features: ["Personalized roadmap", "Accountability check-ins", "Goal setting & tracking", "Mindset & confidence work"],
-    accent: false,
+    subtitle: "Strategic 1:1 Guidance",
+    description: "Strategic guidance and personalized support for professionals navigating career growth, transitions, reinvention, and what comes next.",
+    features: ["Personalized career roadmap", "Accountability & momentum", "Goal clarity & action planning", "Mindset & confidence work"],
+  },
+  {
+    tag: "High Impact",
+    title: "Resume & LinkedIn Optimization",
+    subtitle: "Stand Out on Paper & Online",
+    description: "ATS-optimized resumes, LinkedIn profile enhancement, personal brand positioning, and modern job search strategy designed to help clients stand out in today's evolving market.",
+    features: ["ATS-optimized resume", "LinkedIn profile rewrite", "Personal brand narrative", "Modern job search strategy"],
+  },
+  {
+    tag: "High Impact",
+    title: "Interview Coaching",
+    subtitle: "Walk In Confident, Walk Out Hired",
+    description: "Mock interviews, STAR methodology training, confidence-building, salary negotiation guidance, and strategic preparation to help clients interview with clarity and confidence.",
+    features: ["Mock interviews & feedback", "STAR method mastery", "Salary negotiation coaching", "Confidence & presence work"],
   },
   {
     tag: "Strategic",
     title: "Career Pivot Strategy",
     subtitle: "Change Lanes. Not Your Values.",
-    description: "Thinking about a career change? We'll map out your transferable skills, identify target industries, and build a strategic bridge from where you are to where you want to be.",
-    features: ["Skills gap analysis", "Industry research", "Transition roadmap", "Network activation"],
-    accent: false,
+    description: "Support for professionals transitioning industries, redefining their path, or reinventing their careers without starting over.",
+    features: ["Skills gap analysis", "Industry research & targeting", "Transition roadmap", "Network activation strategy"],
   },
   {
     tag: "Executive",
     title: "Leadership & Executive Coaching",
     subtitle: "Lead With Purpose & Presence",
-    description: "For managers and leaders ready to step into their next level. Develop executive presence, navigate organizational dynamics, and lead with authenticity and impact.",
-    features: ["Executive presence", "Leadership assessment", "Team dynamics coaching", "Promotion strategy"],
-    accent: false,
+    description: "Coaching for emerging and established leaders focused on executive presence, communication, confidence, strategic growth, leadership development, and navigating the future of work.",
+    features: ["Executive presence", "Leadership assessment", "Strategic communication", "Future of work navigation"],
   },
   {
-    tag: "Tech Specialized",
-    title: "Resume & LinkedIn Optimization",
-    subtitle: "Stand Out on Paper & Online",
-    description: "Craft a resume and LinkedIn profile that stops recruiters in their tracks. ATS-optimized, story-driven, and tailored to the tech industry or your target field.",
-    features: ["ATS-optimized resume", "LinkedIn profile rewrite", "Keyword strategy", "Personal brand alignment"],
-    accent: false,
+    tag: "Future-Forward",
+    title: "AI-Powered Career Strategy",
+    subtitle: "Modern Strategies for a Changing World",
+    description: "Modern career coaching that blends human-centered transformation with cutting-edge AI tools, future-of-work insights, and innovative job search strategies.",
+    features: ["AI tools & integration", "Future-of-work insights", "Modern job search strategy", "Personal brand in the AI era"],
   },
   {
-    tag: "Tech Specialized",
-    title: "Interview Prep & Coaching",
-    subtitle: "Walk In Confident, Walk Out Hired",
-    description: "Master behavioral and technical interview frameworks. Practice live with feedback, overcome nerves, and learn to tell your story compellingly every time.",
-    features: ["STAR method mastery", "Mock interviews w/ feedback", "Salary negotiation coaching", "Follow-up strategy"],
-    accent: false,
+    tag: "For Coaches",
+    title: "Coach Systems & Growth Strategy",
+    subtitle: "Simplify. Scale. Grow.",
+    description: "Support for coaches looking to simplify backend systems, improve lead flow, strengthen client experience, and build scalable coaching ecosystems.",
+    features: ["CRM & workflow setup", "Lead generation strategy", "Client experience design", "Scalable systems & automation"],
+  },
+  {
+    tag: "Speaking",
+    title: "Speaking & Training",
+    subtitle: "Transformational Experiences",
+    description: "Keynotes, workshops, and training experiences focused on career reinvention, leadership development, AI and the future of work, workforce transformation, and modern professional growth.",
+    features: ["Keynote speaking", "Team workshops & training", "Corporate partnerships", "Conference & event engagements"],
   },
 ];
 ---
 
-<section id="services" class="py-23 bg-cream-100 pt-24">
+<section id="services" class="py-24 bg-cream-100 pt-24">
   <div class="max-w-7xl mx-auto px-6 lg:px-12">
 
     <!-- Header -->
@@ -70,195 +78,167 @@ const services = [
       </div>
       <div class="reveal lg:text-right max-w-sm">
         <p class="font-body text-charcoal-800/60 text-base leading-relaxed">
-          Strategic, high-impact coaching for professionals navigating growth, transition, and reinvention. Every engagement is fully customized—built around your goals, your story, and your next chapter.
+          Strategic, high-impact coaching for professionals navigating growth, transition, leadership, reinvention, and what comes next. Each engagement is strategically tailored to your goals, growth stage, and level of support needed.
         </p>
       </div>
     </div>
 
-    <!-- Services grid -->
-<div class="space-y-6">
+    <div class="space-y-6">
 
-  <!-- VIP Card — full width -->
-  <div class="reveal card-hover relative border bg-charcoal-900 border-gold-500/40 p-8 lg:p-12">
-    <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
+      <!-- VIP Card — full width -->
+      <div class="reveal card-hover relative border bg-charcoal-900 border-gold-500/40 p-8 lg:p-12">
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12">
 
-      <!-- Left col: tag, title, description -->
-      <div class="flex flex-col">
-        <div class="mb-6">
-          <span class="inline-block font-body text-[10px] tracking-[0.25em] uppercase px-3 py-1 bg-gold-500 text-cream-50">
-            VIP Experience
-          </span>
-        </div>
-        <h3 class="font-display text-3xl lg:text-4xl text-cream-100 mb-2">
-          The Pathway Intensive
-        </h3>
-        <p class="font-body text-xs tracking-wider uppercase text-gold-300 mb-6">
-          Your Career, Reimagined—Fast
-        </p>
-        <p class="font-body text-md leading-relaxed text-cream-200/70 mb-8 flex-1">
-          A high-touch, immersive experience designed for professionals ready to make a powerful move—whether that's pivoting, leveling up, or stepping into something new. Focused, results-driven, built to create clarity, momentum, and real outcomes.
-        </p>
+          <!-- Left col -->
+          <div class="flex flex-col">
+            <div class="mb-6">
+              <span class="inline-block font-body text-[10px] tracking-[0.25em] uppercase px-3 py-1 bg-gold-500 text-cream-50">
+                VIP Experience
+              </span>
+            </div>
+            <h3 class="font-display text-3xl lg:text-4xl text-cream-100 mb-2">
+              The Pathway Intensive™
+            </h3>
+            <p class="font-body text-xs tracking-wider uppercase text-gold-300 mb-6">
+              Your Career, Reimagined—Fast
+            </p>
+            <p class="font-body text-sm leading-relaxed text-cream-200/70 mb-8 flex-1">
+              A high-level transformational coaching experience designed for professionals ready to accelerate clarity, strategy, confidence, reinvention, and long-term career alignment. This is a focused, results-driven engagement built for those who are ready to move — fast and with full support.
+            </p>
 
-        <!-- What You Walk Away With -->
-        <div>
-          <p class="font-body text-[10px] tracking-[0.2em] uppercase text-cream-200/40 mb-4">
-            What You Walk Away With
-          </p>
-          <ul class="space-y-2">
-            {[
-              "Clear direction and confidence in your next move",
-              "Strong, aligned personal brand",
-              "Resume & LinkedIn that position you effectively",
-              "A strategy that leads to interviews and offers",
-            ].map(item => (
-              <li class="flex items-start gap-3 font-body text-sm text-cream-200/80">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gold-500 shrink-0 mt-0.5">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      <!-- Right col: 3 feature groups + CTA -->
-      <div class="flex flex-col">
-        <p class="font-body text-[10px] tracking-[0.2em] uppercase text-cream-200/40 mb-6">
-          What We Do Together
-        </p>
-
-        <div class="space-y-6 flex-1">
-          {[
-            {
-              label: "Clarity & Strategy",
-              bullets: [
-                "Define your next move and career direction",
-                "Identify aligned roles, industries, and opportunities",
-                "Clarify your personal brand and positioning",
-              ],
-            },
-            {
-              label: "Positioning & Visibility",
-              bullets: [
-                "Resume transformation (strategic, not just edits)",
-                "LinkedIn optimization and messaging",
-                "Cohesive personal brand narrative",
-              ],
-            },
-            {
-              label: "Execution & Results",
-              bullets: [
-                "Job search and outreach strategy",
-                "Interview coaching and mock sessions",
-                "Offer and compensation strategy",
-              ],
-            },
-          ].map(group => (
             <div>
-              <p class="font-body text-xs tracking-[0.1em] uppercase text-gold-400 mb-3">
-                {group.label}
+              <p class="font-body text-[10px] tracking-[0.2em] uppercase text-cream-200/40 mb-4">
+                What You Walk Away With
               </p>
               <ul class="space-y-2">
-                {group.bullets.map(b => (
-                  <li class="flex items-start gap-3 font-body text-sm text-cream-200/70">
+                {[
+                  "Clear direction and confidence in your next move",
+                  "Strong, aligned personal brand",
+                  "Resume & LinkedIn that position you effectively",
+                  "A strategy that leads to interviews and offers",
+                ].map(item => (
+                  <li class="flex items-start gap-3 font-body text-sm text-cream-200/80">
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gold-500 shrink-0 mt-0.5">
                       <polyline points="20 6 9 17 4 12"/>
                     </svg>
-                    {b}
+                    {item}
                   </li>
                 ))}
               </ul>
             </div>
-          ))}
-        </div>
+          </div>
 
-        <!-- CTA -->
-        <div class="mt-8 pt-6 border-t border-gold-500/15">
-          <a
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn-primary text-xs py-3 px-6 inline-flex"
+          <!-- Right col -->
+          <div class="flex flex-col">
+            <p class="font-body text-[10px] tracking-[0.2em] uppercase text-cream-200/40 mb-6">
+              What We Do Together
+            </p>
+            <div class="space-y-6 flex-1">
+              {[
+                {
+                  label: "Clarity & Strategy",
+                  bullets: ["Define your next move and career direction", "Identify aligned roles, industries, and opportunities", "Clarify your personal brand and positioning"],
+                },
+                {
+                  label: "Positioning & Visibility",
+                  bullets: ["Resume transformation (strategic, not just edits)", "LinkedIn optimization and messaging", "Cohesive personal brand narrative"],
+                },
+                {
+                  label: "Execution & Results",
+                  bullets: ["Job search and outreach strategy", "Interview coaching and mock sessions", "Offer and compensation strategy"],
+                },
+              ].map(group => (
+                <div>
+                  <p class="font-body text-xs tracking-[0.1em] uppercase text-gold-400 mb-3">{group.label}</p>
+                  <ul class="space-y-2">
+                    {group.bullets.map(b => (
+                      <li class="flex items-start gap-3 font-body text-sm text-cream-200/70">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gold-500 shrink-0 mt-0.5">
+                          <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+            <div class="mt-8 pt-6 border-t border-gold-500/15">
+              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" class="btn-primary text-xs py-3 px-6 inline-flex">
+                Get Started
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 8 service cards -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {services.map((service, i) => (
+          <div
+            class="reveal card-hover relative flex flex-col p-8 border bg-white border-cream-200 hover:border-gold-400/40"
+            style={`transition-delay: ${i * 60}ms`}
           >
-            Get Started
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <div class="mb-6">
+              <span class="inline-block font-body text-[10px] tracking-[0.25em] uppercase px-3 py-1 bg-cream-100 text-gold-600 border border-gold-400/30">
+                {service.tag}
+              </span>
+            </div>
+            <h3 class="font-display text-xl mb-2 text-charcoal-900">{service.title}</h3>
+            <p class="font-body text-xs tracking-wider uppercase mb-4 text-gold-500">{service.subtitle}</p>
+            <p class="font-body text-sm leading-relaxed mb-6 flex-1 text-charcoal-800/60">{service.description}</p>
+            <ul class="space-y-2 mb-6">
+              {service.features.map((feature) => (
+                <li class="flex items-center gap-3 font-body text-sm text-charcoal-800/70">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gold-500 shrink-0">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 font-body text-xs tracking-[0.15em] uppercase text-gold-500 hover:text-gold-600 transition-all duration-300 group">
+              Get Started
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform duration-300">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        ))}
+      </div>
+
+      <!-- Consultation CTA card -->
+      <div class="reveal p-8 lg:p-12 text-center"
+        style="background: linear-gradient(135deg, #f2e0de 0%, #e8cbc8 100%);">
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <span class="shimmer-line w-8 h-px block"></span>
+          <span class="section-label">Not Sure Where to Start?</span>
+          <span class="shimmer-line w-8 h-px block"></span>
+        </div>
+        <h3 class="font-display text-3xl lg:text-4xl text-charcoal-900 mb-4">
+          Let's figure it out together — <em class="text-gradient-gold">for free.</em>
+        </h3>
+        <p class="font-body text-charcoal-800/60 max-w-lg mx-auto mb-8">
+          Book a no-pressure, 30-minute discovery call. We'll explore where you are, where you want to go, and whether working together is the right fit.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/quiz" class="btn-primary">
+            Take the Career Destiny Quiz™
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
             </svg>
+          </a>
+          <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" class="btn-outline">
+            Book Your Free Consultation
           </a>
         </div>
       </div>
 
     </div>
   </div>
-
-  <!-- Remaining 5 cards -->
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {services.slice(1).map((service, i) => (
-      <div
-        class="reveal card-hover relative flex flex-col p-8 border bg-white border-cream-200 hover:border-gold-400/40"
-        style={`transition-delay: ${i * 80}ms`}
-      >
-        <div class="mb-6">
-          <span class="inline-block font-body text-[10px] tracking-[0.25em] uppercase px-3 py-1 bg-cream-100 text-gold-600 border border-gold-400/30">
-            {service.tag}
-          </span>
-        </div>
-        <h3 class="font-display text-2xl mb-2 text-charcoal-900">
-          {service.title}
-        </h3>
-        <p class="font-body text-xs tracking-wider uppercase mb-4 text-gold-500">
-          {service.subtitle}
-        </p>
-        <p class="font-body text-sm leading-relaxed mb-8 flex-1 text-charcoal-800/60">
-          {service.description}
-        </p>
-        <ul class="space-y-2 mb-8">
-          {service.features.map((feature) => (
-            <li class="flex items-center gap-3 font-body text-sm text-charcoal-800/70">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gold-500 shrink-0">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
-              {feature}
-            </li>
-          ))}
-        </ul>
-        
-        <a  href={CALENDLY_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 font-body text-xs tracking-[0.15em] uppercase text-gold-500 hover:text-gold-600 transition-all duration-300 group"
-        >
-          Get Started
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform duration-300">
-            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-          </svg>
-        </a>
-      </div>
-    ))}
-
-    <!-- Consultation CTA card -->
-    <div class="reveal md:col-span-2 lg:col-span-3 p-8 lg:p-12 text-center"
-      style={`background: linear-gradient(135deg, #f2e0de 0%, #e8cbc8 100%); transition-delay: ${services.length * 80}ms`}>
-      <div class="flex items-center justify-center gap-3 mb-4">
-        <span class="shimmer-line w-8 h-px block"></span>
-        <span class="section-label">Not Sure Where to Start?</span>
-        <span class="shimmer-line w-8 h-px block"></span>
-      </div>
-      <h3 class="font-display text-3xl lg:text-4xl text-charcoal-900 mb-4">
-        Let's figure it out together — <em class="text-gradient-gold">for free.</em>
-      </h3>
-      <p class="font-body text-charcoal-800/60 max-w-lg mx-auto mb-8">
-        Book a no-pressure, 30-minute discovery call. We'll explore where you are, where you want to go, and whether working together is the right fit.
-      </p>
-      <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" class="btn-primary">
-        Book Your Free Consultation
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-        </svg>
-      </a>
-    </div>
-  </div>
-
-</div>
 </section>

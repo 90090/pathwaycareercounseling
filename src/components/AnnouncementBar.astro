@@ -1,6 +1,5 @@
 ---
 // AnnouncementBar.astro
-// Sits above the fixed nav. Dismissible. Drives quiz + newsletter signups.
 ---
 
 <div
@@ -8,19 +7,17 @@
   class="fixed top-0 left-0 right-0 z-[60] transition-transform duration-500"
   style="background: linear-gradient(90deg, #1a1410 0%, #2c2420 40%, #1a1410 100%);"
 >
-  <!-- Gold shimmer line at very top -->
   <div class="shimmer-line w-full h-px"></div>
 
   <div class="max-w-7xl mx-auto px-4 lg:px-12">
     <div class="flex items-center justify-between gap-4 py-2.5">
 
-      <!-- Left pill: Quiz -->
+      <!-- Left: Quiz CTA -->
       <a
         href="/quiz"
         class="group flex items-center gap-2.5 shrink-0 hover:opacity-90 transition-opacity"
-        aria-label="Take the free career quiz"
+        aria-label="Take the Career Destiny Quiz"
       >
-        <!-- Pill badge -->
         <span class="hidden sm:inline-flex items-center gap-1.5 bg-gold-500/15 border border-gold-500/30 text-gold-300 font-body text-[10px] tracking-[0.2em] uppercase px-2.5 py-1 shrink-0">
           <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>
@@ -28,21 +25,19 @@
           Free Quiz
         </span>
         <span class="font-body text-xs text-cream-200/80 group-hover:text-cream-100 transition-colors hidden md:inline">
-          What's your #1 career roadblock?
+          Discover what's really blocking your next career move
         </span>
         <span class="font-body text-xs text-cream-200/80 group-hover:text-cream-100 transition-colors md:hidden">
-          Free career quiz
+          Take the Career Destiny Quiz™
         </span>
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gold-400 group-hover:translate-x-0.5 transition-transform shrink-0">
           <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
         </svg>
       </a>
 
-      <!-- Center divider + newsletter prompt -->
+      <!-- Center: Newsletter -->
       <div class="flex items-center gap-3 lg:gap-4 min-w-0">
         <div class="w-px h-4 bg-gold-500/20 shrink-0 hidden sm:block"></div>
-
-        <!-- Newsletter inline signup toggle -->
         <div class="flex items-center gap-2.5 min-w-0">
           <span class="hidden sm:inline-flex items-center gap-1.5 bg-cream-100/5 border border-cream-200/10 text-cream-200/60 font-body text-[10px] tracking-[0.2em] uppercase px-2.5 py-1 shrink-0">
             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -50,8 +45,6 @@
             </svg>
             Monthly Tips
           </span>
-
-          <!-- Collapsed label (clicks to expand the inline form) -->
           <button
             id="bar-email-toggle"
             class="group font-body text-xs text-cream-200/60 hover:text-cream-100 transition-colors hidden lg:flex items-center gap-1.5 shrink-0"
@@ -61,8 +54,6 @@
               <path d="m6 9 6 6 6-6"/>
             </svg>
           </button>
-
-          <!-- Inline email form (hidden until toggle) -->
           <form
             id="bar-email-form"
             class="hidden lg:flex items-center gap-2 overflow-hidden"
@@ -82,8 +73,6 @@
               Subscribe
             </button>
           </form>
-
-          <!-- Success message -->
           <span id="bar-email-success" class="hidden font-body text-xs text-gold-300 items-center gap-1.5">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="20 6 9 17 4 12"/>
@@ -93,7 +82,7 @@
         </div>
       </div>
 
-      <!-- Right: dismiss button -->
+      <!-- Right: dismiss -->
       <button
         id="bar-dismiss"
         aria-label="Dismiss announcement"
@@ -107,29 +96,25 @@
     </div>
   </div>
 
-  <!-- Bottom border -->
   <div class="w-full h-px bg-gold-500/10"></div>
 </div>
 
 <script>
-  const BAR_HEIGHT = 44; // px — matches the bar's rendered height
+  const BAR_HEIGHT = 44;
   const bar = document.getElementById('announcement-bar') as HTMLElement;
   const dismissBtn = document.getElementById('bar-dismiss');
   const toggle = document.getElementById('bar-email-toggle');
   const form = document.getElementById('bar-email-form') as HTMLFormElement;
-  const chevron = document.getElementById('bar-chevron');
   const successMsg = document.getElementById('bar-email-success');
   const nav = document.getElementById('main-nav') as HTMLElement;
   const hero = document.querySelector('section') as HTMLElement;
 
-  // Set CSS variable so nav + hero offset correctly
   function setOffset(px: number) {
     document.documentElement.style.setProperty('--bar-height', `${px}px`);
     if (nav) nav.style.top = `${px}px`;
-    if (hero) hero.style.paddingTop = `${px + 80}px`; // 80 = nav height
+    if (hero) hero.style.paddingTop = `${px + 80}px`;
   }
 
-  // Check if previously dismissed this session
   if (sessionStorage.getItem('bar-dismissed') === 'true') {
     bar.style.display = 'none';
     setOffset(0);
@@ -137,18 +122,13 @@
     setOffset(BAR_HEIGHT);
   }
 
-  // Dismiss
   dismissBtn?.addEventListener('click', () => {
     bar.style.transform = 'translateY(-100%)';
     bar.style.opacity = '0';
-    setTimeout(() => {
-      bar.style.display = 'none';
-      setOffset(0);
-    }, 400);
+    setTimeout(() => { bar.style.display = 'none'; setOffset(0); }, 400);
     sessionStorage.setItem('bar-dismissed', 'true');
   });
 
-  // Toggle inline email form
   let formOpen = false;
   toggle?.addEventListener('click', () => {
     formOpen = !formOpen;
@@ -165,26 +145,18 @@
     }
   });
 
-  // Newsletter form submit
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     const email = (form.querySelector('input[name="email"]') as HTMLInputElement)?.value;
-
     try {
       await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, source: 'announcement_bar' }),
       });
-    } catch {
-      // Proceed regardless
-    }
-
+    } catch {}
     form.classList.add('hidden');
-    if (successMsg) {
-      successMsg.classList.remove('hidden');
-      successMsg.classList.add('flex');
-    }
+    if (successMsg) { successMsg.classList.remove('hidden'); successMsg.classList.add('flex'); }
     if (toggle) toggle.style.display = 'none';
   });
 </script>

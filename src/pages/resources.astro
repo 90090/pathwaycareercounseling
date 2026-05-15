@@ -1,0 +1,257 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const CALENDLY_URL = "https://calendly.com/YOUR_LINK_HERE";
+
+const resources = [
+  {
+    category: "Career Strategy",
+    items: [
+      {
+        title: "The Career Clarity Worksheet",
+        description: "A structured exercise to help you identify your values, strengths, and the direction that actually aligns with who you are.",
+        format: "PDF Download",
+        icon: `<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/>`,
+      },
+      {
+        title: "Job Search Strategy Checklist",
+        description: "A step-by-step checklist covering everything from targeting the right roles to following up after interviews.",
+        format: "PDF Download",
+        icon: `<path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>`,
+      },
+    ],
+  },
+  {
+    category: "Resume & LinkedIn",
+    items: [
+      {
+        title: "Resume Impact Statement Template",
+        description: "A fill-in-the-blank template for writing bullet points that highlight your impact, not just your responsibilities.",
+        format: "Word Template",
+        icon: `<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/>`,
+      },
+      {
+        title: "LinkedIn Profile Optimization Guide",
+        description: "A practical guide to optimizing every section of your LinkedIn profile for visibility, searchability, and recruiter attraction.",
+        format: "PDF Download",
+        icon: `<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>`,
+      },
+    ],
+  },
+  {
+    category: "Interview Prep",
+    items: [
+      {
+        title: "STAR Method Response Template",
+        description: "A ready-to-use template for structuring your behavioral interview answers with impact and clarity.",
+        format: "PDF Download",
+        icon: `<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>`,
+      },
+      {
+        title: "50 Most Common Interview Questions",
+        description: "The top 50 interview questions across behavioral, situational, and role-specific categories — with guidance on how to answer each.",
+        format: "PDF Download",
+        icon: `<circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>`,
+      },
+    ],
+  },
+  {
+    category: "Mindset & Confidence",
+    items: [
+      {
+        title: "Career Values Assessment",
+        description: "Identify what matters most to you in your career — values, environment, impact, and growth — so you can make decisions from clarity.",
+        format: "PDF Download",
+        icon: `<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>`,
+      },
+      {
+        title: "Overcoming Imposter Syndrome Workbook",
+        description: "A reflective workbook to help you identify, challenge, and reframe the beliefs that are holding you back from stepping into your full potential.",
+        format: "PDF Workbook",
+        icon: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>`,
+      },
+    ],
+  },
+];
+---
+
+<Layout
+  title="Free Resources | Pathway Career Coaching"
+  description="Free career tools, templates, and guides from Erica Peryga. Resume templates, interview prep, LinkedIn guides, and more."
+>
+
+  <!-- Hero -->
+  <section class="pt-36 pb-20 relative overflow-hidden"
+    style="background: linear-gradient(160deg, #f8efee 0%, #f2e0de 60%, #e8cbc8 100%);">
+    <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+      <div class="flex items-center justify-center gap-3 mb-6">
+        <span class="w-8 h-px bg-gold-500 block"></span>
+        <span class="font-body text-xs tracking-[0.25em] uppercase text-gold-500">Free Resources</span>
+        <span class="w-8 h-px bg-gold-500 block"></span>
+      </div>
+      <h1 class="font-display text-5xl lg:text-6xl text-charcoal-900 mb-6">
+        Tools to Move<br />
+        <em class="text-gradient-gold">Your Career Forward</em>
+      </h1>
+      <p class="font-body text-charcoal-800/60 text-lg max-w-xl mx-auto">
+        Free templates, guides, and workbooks designed to help you gain clarity, strengthen your positioning, and take strategic action toward what's next.
+      </p>
+    </div>
+  </section>
+
+  <!-- Quiz CTA -->
+  <div class="bg-charcoal-900 py-10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="font-body text-[10px] tracking-[0.25em] uppercase text-gold-500 mb-1">Start Here</p>
+        <h3 class="font-display text-2xl text-cream-100">
+          Not sure where to begin? Take the Career Destiny Quiz™
+        </h3>
+      </div>
+      <a href="/quiz" class="btn-primary shrink-0">
+        Take the Free Quiz
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Resources -->
+  <section class="py-24 lg:py-32 bg-cream-100">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 space-y-20">
+
+      {resources.map((section) => (
+        <div class="reveal">
+          <div class="flex items-center gap-4 mb-10">
+            <span class="shimmer-line w-6 h-px block shrink-0"></span>
+            <h2 class="font-display text-2xl text-charcoal-900">{section.category}</h2>
+          </div>
+          <div class="grid md:grid-cols-2 gap-6">
+            {section.items.map((resource) => (
+              <div class="bg-white border border-cream-200 hover:border-gold-400/40 transition-colors duration-300 p-8 flex gap-6">
+                <div class="shrink-0">
+                  <div class="w-12 h-12 bg-cream-100 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-gold-500">
+                      <Fragment set:html={resource.icon} />
+                    </svg>
+                  </div>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="font-body text-[10px] tracking-[0.2em] uppercase text-gold-500 bg-gold-500/10 px-2 py-0.5">{resource.format}</span>
+                  </div>
+                  <h3 class="font-display text-lg text-charcoal-900 mb-2">{resource.title}</h3>
+                  <p class="font-body text-sm text-charcoal-800/60 leading-relaxed mb-4">{resource.description}</p>
+
+                  <!-- Email gate trigger -->
+                  <button
+                    class="resource-download-btn inline-flex items-center gap-2 font-body text-xs tracking-[0.15em] uppercase text-gold-500 hover:text-gold-600 transition-colors duration-300 group"
+                    data-title={resource.title}
+                  >
+                    Download Free
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-y-0.5 transition-transform duration-300">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+
+    </div>
+  </section>
+
+  <!-- Email gate modal -->
+  <div id="resource-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-6" style="background: rgba(28,20,16,0.7); backdrop-filter: blur(4px);">
+    <div class="bg-white max-w-md w-full p-8 lg:p-10 relative shadow-2xl">
+      <button id="modal-close" class="absolute top-4 right-4 text-charcoal-800/30 hover:text-charcoal-800/70 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+        </svg>
+      </button>
+      <div id="modal-form-state">
+        <div class="text-center mb-6">
+          <div class="w-12 h-12 bg-gold-500/10 flex items-center justify-center mx-auto mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b87e27" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/>
+            </svg>
+          </div>
+          <h3 class="font-display text-2xl text-charcoal-900 mb-2">Get Your Free Resource</h3>
+          <p id="modal-resource-name" class="font-body text-sm text-charcoal-800/60 mb-1"></p>
+          <p class="font-body text-xs text-charcoal-800/40">Enter your details below and we'll send it straight to your inbox.</p>
+        </div>
+        <form id="resource-form" class="space-y-4">
+          <input type="text" name="name" required placeholder="Your first name"
+            class="w-full font-body text-sm px-4 py-3 bg-cream-100 border border-cream-200 text-charcoal-900 placeholder-charcoal-800/30 focus:outline-none focus:border-gold-500 transition-colors" />
+          <input type="email" name="email" required placeholder="Your email address"
+            class="w-full font-body text-sm px-4 py-3 bg-cream-100 border border-cream-200 text-charcoal-900 placeholder-charcoal-800/30 focus:outline-none focus:border-gold-500 transition-colors" />
+          <input type="hidden" name="resource" id="modal-resource-input" />
+          <button type="submit" class="w-full btn-primary justify-center py-4">
+            Send Me the Resource
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+            </svg>
+          </button>
+          <p class="font-body text-xs text-charcoal-800/30 text-center">No spam. Unsubscribe anytime.</p>
+        </form>
+      </div>
+      <div id="modal-success-state" class="hidden text-center py-6">
+        <div class="w-14 h-14 rounded-full bg-gold-500/10 flex items-center justify-center mx-auto mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b87e27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 class="font-display text-2xl text-charcoal-900 mb-2">Check Your Inbox!</h3>
+        <p class="font-body text-sm text-charcoal-800/60">Your resource is on its way. While you wait — have you taken the Career Destiny Quiz™?</p>
+        <a href="/quiz" class="inline-flex items-center gap-2 mt-6 btn-primary text-xs py-3">
+          Take the Free Quiz
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</Layout>
+
+<script>
+  const modal = document.getElementById('resource-modal') as HTMLElement;
+  const modalClose = document.getElementById('modal-close');
+  const resourceNameEl = document.getElementById('modal-resource-name');
+  const resourceInput = document.getElementById('modal-resource-input') as HTMLInputElement;
+  const form = document.getElementById('resource-form') as HTMLFormElement;
+  const formState = document.getElementById('modal-form-state');
+  const successState = document.getElementById('modal-success-state');
+
+  document.querySelectorAll('.resource-download-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const title = (btn as HTMLElement).dataset.title || '';
+      if (resourceNameEl) resourceNameEl.textContent = title;
+      if (resourceInput) resourceInput.value = title;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    });
+  });
+
+  modalClose?.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  });
+
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  });
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(form).entries());
+    try {
+      await fetch('/api/resource', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+    } catch {}
+    formState?.classList.add('hidden');
+    successState?.classList.remove('hidden');
+  });
+</script>

@@ -1,0 +1,148 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const CALENDLY_URL = "https://calendly.com/YOUR_LINK_HERE";
+---
+<Layout
+  title="Podcast | Pathway Career Coaching"
+  description="The Pathway Podcast with Erica Peryga — Coming Soon. Career reinvention, leadership, and the future of work."
+>
+  <section class="min-h-screen relative overflow-hidden flex items-center"
+    style="background: linear-gradient(160deg, #f8efee 0%, #f2e0de 60%, #e8cbc8 100%); padding-top: calc(var(--bar-height, 44px) + 80px);">
+
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full opacity-10"
+        style="background: radial-gradient(circle, #b87e27 0%, transparent 70%);">
+      </div>
+      <div class="absolute top-1/3 right-16 w-px h-48 bg-gradient-to-b from-transparent via-gold-400/20 to-transparent hidden lg:block"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full py-20">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <!-- Left: Coming Soon content -->
+        <div class="reveal">
+          <div class="flex items-center gap-3 mb-6">
+            <span class="shimmer-line w-8 h-px block"></span>
+            <span class="section-label">Podcast</span>
+          </div>
+          <div class="inline-flex items-center gap-2 bg-gold-500/10 border border-gold-400/30 px-4 py-2 mb-8">
+            <span class="w-2 h-2 rounded-full bg-gold-500 animate-pulse"></span>
+            <span class="font-body text-xs tracking-[0.2em] uppercase text-gold-600">Coming Soon</span>
+          </div>
+          <h1 class="font-display text-5xl lg:text-6xl text-charcoal-900 leading-tight mb-8">
+            The Pathway<br />
+            <em class="text-gradient-gold">Podcast</em>
+          </h1>
+          <div class="space-y-5 font-body text-charcoal-800/70 leading-relaxed mb-10">
+            <p>
+              Real conversations about career reinvention, leadership development, AI and the future of work, and what it actually takes to step into what's next.
+            </p>
+            <p>
+              Hosted by Erica Peryga — career strategist, speaker, and founder of The Pathway Method — each episode blends strategic insight, transformational coaching, and honest conversation designed to help you move forward with clarity and confidence.
+            </p>
+          </div>
+
+          <!-- What to expect -->
+          <div class="mb-10">
+            <p class="font-body text-[10px] tracking-[0.25em] uppercase text-charcoal-800/40 mb-4">What to Expect</p>
+            <ul class="space-y-3">
+              {[
+                "Career reinvention stories and strategies",
+                "Leadership and executive presence conversations",
+                "AI, future of work, and modern career tools",
+                "Mindset, confidence, and transformational growth",
+                "Expert guests and thought leaders",
+              ].map(item => (
+                <li class="flex items-start gap-3 font-body text-sm text-charcoal-800/70">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gold-500 shrink-0 mt-0.5">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Email capture -->
+          <div>
+            <p class="font-body text-[10px] tracking-[0.25em] uppercase text-charcoal-800/40 mb-3">Be the First to Know</p>
+            <form id="podcast-form" class="flex gap-3 max-w-md">
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="your@email.com"
+                class="flex-1 font-body text-sm px-4 py-3 bg-white border border-cream-200 text-charcoal-900 placeholder-charcoal-800/30 focus:outline-none focus:border-gold-500 transition-colors"
+              />
+              <button type="submit" class="btn-primary text-xs py-3 px-5 whitespace-nowrap">
+                Notify Me
+              </button>
+            </form>
+            <p id="podcast-success" class="hidden font-body text-sm text-gold-600 mt-3 flex items-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              You're on the list! We'll let you know when we launch.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: Podcast card mockup -->
+        <div class="reveal flex justify-center lg:justify-end">
+          <div class="relative">
+            <div class="absolute -top-3 -left-3 w-12 h-12 border-t-2 border-l-2 border-gold-500 z-20"></div>
+            <div class="absolute -bottom-3 -right-3 w-12 h-12 border-b-2 border-r-2 border-gold-500 z-20"></div>
+
+            <div class="w-[300px] lg:w-[360px] bg-charcoal-900 p-10 flex flex-col items-center text-center gap-6">
+              <!-- Podcast icon -->
+              <div class="w-24 h-24 rounded-full bg-gold-500/10 border border-gold-500/30 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#b87e27" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                  <line x1="12" x2="12" y1="19" y2="22"/>
+                </svg>
+              </div>
+              <div>
+                <div class="font-body text-[10px] tracking-[0.3em] uppercase text-gold-500 mb-2">Coming Soon</div>
+                <h3 class="font-display text-2xl text-cream-100 mb-2">The Pathway Podcast</h3>
+                <p class="font-body text-xs text-cream-200/50 leading-relaxed">with Erica Peryga</p>
+              </div>
+              <!-- Fake waveform -->
+              <div class="flex items-center gap-1 h-8">
+                {[3, 6, 9, 5, 8, 4, 7, 10, 5, 8, 3, 6, 9, 4, 7].map((h) => (
+                  <div class="w-1 rounded-full bg-gold-500/40" style={`height: ${h * 3}px`}></div>
+                ))}
+              </div>
+              <!-- Platform placeholders -->
+              <div>
+                <p class="font-body text-[10px] tracking-[0.2em] uppercase text-cream-200/30 mb-3">Available on</p>
+                <div class="flex gap-3 justify-center">
+                  {["Spotify", "Apple", "Google"].map(platform => (
+                    <span class="font-body text-[10px] tracking-wider px-3 py-1.5 border border-cream-200/10 text-cream-200/30 uppercase">{platform}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const form = document.getElementById('podcast-form') as HTMLFormElement;
+  const success = document.getElementById('podcast-success');
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = (form.querySelector('input[name="email"]') as HTMLInputElement)?.value;
+    try {
+      await fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, source: 'podcast_waitlist' }) });
+    } catch {}
+    form.style.display = 'none';
+    success?.classList.remove('hidden');
+    success?.classList.add('flex');
+  });
+</script>

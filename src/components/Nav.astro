@@ -2,12 +2,13 @@
 const CALENDLY_URL = "https://calendly.com/YOUR_LINK_HERE";
 
 const navLinks = [
+  { label: "Home", href: "/" },
   { label: "About", href: "/#about" },
   { label: "Services", href: "/#services" },
-  { label: "The Pathway", href: "/#pathway" },
+  { label: "For Coaches", href: "/coaches" },
   { label: "Speaking", href: "/speaking" },
-  { label: "Book", href: "/book" },
-  { label: "FAQ", href: "/faq" },
+  { label: "Podcast", href: "/podcast" },
+  { label: "Resources", href: "/resources" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -33,7 +34,7 @@ const currentPath = Astro.url.pathname;
       </a>
 
       <!-- Desktop Nav -->
-      <nav class="hidden lg:flex items-center gap-8">
+      <nav class="hidden lg:flex items-center gap-6">
         {navLinks.map((link) => (
           <a
             href={link.href}
@@ -53,7 +54,7 @@ const currentPath = Astro.url.pathname;
           rel="noopener noreferrer"
           class="btn-primary text-xs py-3 px-6"
         >
-          Free Consultation
+          Book Erica
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
           </svg>
@@ -94,7 +95,7 @@ const currentPath = Astro.url.pathname;
       rel="noopener noreferrer"
       class="btn-primary w-full justify-center text-xs py-4"
     >
-      Book Free Consultation
+      Book Erica
     </a>
   </div>
 </header>
@@ -107,7 +108,6 @@ const currentPath = Astro.url.pathname;
     menu?.classList.toggle('hidden');
   });
 
-  // Close menu on link click
   menu?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => menu.classList.add('hidden'));
   });

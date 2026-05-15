@@ -1,30 +1,58 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import CareerQuiz from '../components/CareerQuiz';
+import CareerQuiz from '../components/CareerQuiz.tsx';
 ---
-
 <Layout
-  title="Career Roadblock Quiz | Pathway Career Coaching"
-  description="Discover your #1 career roadblock in 2 minutes. Free personalized assessment from Erica Peryga."
+  title="Career Destiny Quiz™ | Pathway Career Coaching"
+  description="Discover what's really blocking your next career move and your personalized pathway forward. Take the Career Destiny Quiz™ by Erica Peryga."
 >
-  <section class="min-h-screen pt-28 pb-20 relative overflow-hidden"
-    style="background: linear-gradient(160deg, #f8efee 0%, #f2e0de 60%, #e8cbc8 100%);">
+  <section class="min-h-screen relative overflow-hidden"
+    style="background: linear-gradient(160deg, #f8efee 0%, #f2e0de 60%, #e8cbc8 100%); padding-top: calc(var(--bar-height, 44px) + 80px);">
 
-    <div class="max-w-2xl mx-auto px-6 text-center mb-12">
-      <div class="flex items-center justify-center gap-3 mb-6">
-        <span class="w-8 h-px bg-gold-500 block"></span>
-        <span class="font-body text-xs tracking-[0.25em] uppercase text-gold-500">Free Assessment</span>
-        <span class="w-8 h-px bg-gold-500 block"></span>
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full opacity-15"
+        style="background: radial-gradient(circle, #b87e27 0%, transparent 70%);">
       </div>
-      <h1 class="font-display text-5xl text-charcoal-900 mb-4">
-        What's Holding You<br />
-        <em class="text-gradient-gold">Back in Your Career?</em>
-      </h1>
-      <p class="font-body text-charcoal-800/60 text-lg">
-        Answer 5 quick questions and get a personalized analysis with Erica's top recommendations—delivered instantly.
-      </p>
+      <div class="absolute bottom-0 -left-24 w-[300px] h-[300px] rounded-full opacity-10"
+        style="background: radial-gradient(circle, #9a681e 0%, transparent 70%);">
+      </div>
     </div>
 
-    <CareerQuiz client:load />
+    <div class="relative z-10 max-w-3xl mx-auto px-6 lg:px-12 py-20">
+
+      <!-- Header -->
+      <div class="text-center mb-14">
+        <div class="flex items-center justify-center gap-3 mb-6">
+          <span class="w-8 h-px bg-gold-500 block"></span>
+          <span class="font-body text-xs tracking-[0.25em] uppercase text-gold-500">Free Assessment</span>
+          <span class="w-8 h-px bg-gold-500 block"></span>
+        </div>
+        <h1 class="font-display text-4xl lg:text-6xl text-charcoal-900 leading-tight mb-6">
+          The Career Destiny Quiz™
+        </h1>
+        <p class="font-body text-lg text-charcoal-800/60 max-w-xl mx-auto mb-4">
+          Discover What's Really Blocking Your Next Career Move — and the Path Forward
+        </p>
+        <p class="font-body text-sm text-charcoal-800/50 max-w-lg mx-auto">
+          In just a few minutes, uncover your career archetype, hidden blockers, and personalized pathway toward clarity, confidence, and reinvention.
+        </p>
+      </div>
+
+      <!-- Trust signals -->
+      <div class="flex flex-wrap items-center justify-center gap-6 mb-14">
+        {["5 Questions", "Personalized Results", "Free — No Credit Card", "Instant Archetype Reveal"].map(item => (
+          <div class="flex items-center gap-2 font-body text-xs tracking-wider uppercase text-charcoal-800/50">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#b87e27" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            {item}
+          </div>
+        ))}
+      </div>
+
+      <!-- Quiz component -->
+      <CareerQuiz client:load />
+
+    </div>
   </section>
 </Layout>

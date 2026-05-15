@@ -2,11 +2,13 @@
 const CALENDLY_URL = "https://calendly.com/YOUR_LINK_HERE";
 
 const navLinks = [
+  { label: "Home", href: "/" },
   { label: "About", href: "/#about" },
   { label: "Services", href: "/#services" },
-  { label: "The Pathway Method", href: "/#method" },
-  { label: "Book", href: "/book" },
-  { label: "FAQ", href: "/faq" },
+  { label: "For Coaches", href: "/coaches" },
+  { label: "Speaking", href: "/speaking" },
+  { label: "Podcast", href: "/podcast" },
+  { label: "Resources", href: "/resources" },
   { label: "Contact", href: "/#contact" },
 ];
 ---
@@ -16,13 +18,32 @@ const navLinks = [
   <!-- Top accent line -->
   <div class="shimmer-line w-full h-px"></div>
 
+  <!-- Quiz CTA strip -->
+  <div class="border-b border-cream-200/10"
+    style="background: linear-gradient(90deg, #1a1410 0%, #2c2420 50%, #1a1410 100%);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="font-body text-[10px] tracking-[0.25em] uppercase text-gold-500 mb-1">Free Assessment</p>
+        <h3 class="font-display text-2xl text-cream-100">
+          Discover What's Blocking Your Next Career Move
+        </h3>
+      </div>
+      <a href="/quiz" class="btn-primary shrink-0">
+        Take the Career Destiny Quiz™
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
   <!-- Main footer -->
   <div class="max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-20">
     <div class="grid lg:grid-cols-4 gap-12 lg:gap-16">
 
       <!-- Brand column -->
       <div class="lg:col-span-2">
-        <a href="/" class="flex flex-col leading-none mb-6 group w-fit">
+        <a href="/" class="flex flex-col leading-none mb-4 group w-fit">
           <span class="font-display text-2xl text-cream-100 tracking-wide group-hover:text-gold-300 transition-colors duration-300">
             Pathway
           </span>
@@ -31,8 +52,12 @@ const navLinks = [
           </span>
         </a>
 
+        <p class="font-body text-[11px] tracking-[0.15em] uppercase text-gold-400/60 mb-5 italic">
+          Your Pathway to Clarity • Your Future with Confidence
+        </p>
+
         <p class="font-body text-cream-200/40 text-sm leading-relaxed max-w-xs mb-8">
-          Helping professionals redefine their careers and step into what's next through The Pathway Method.
+          Helping professionals and coaches reinvent their careers, businesses, and futures with clarity, strategic action, and confidence.
         </p>
 
         <!-- Social links -->
@@ -80,7 +105,7 @@ const navLinks = [
           rel="noopener noreferrer"
           class="btn-primary w-full justify-center text-xs py-3"
         >
-          Free Consultation
+          Book a Free Discovery Call
         </a>
 
         <div class="mt-8 pt-8 border-t border-cream-200/10">

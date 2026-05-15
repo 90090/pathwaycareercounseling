@@ -18,26 +18,20 @@ const CALENDLY_URL = "https://calendly.com/YOUR_LINK_HERE";
         <!-- Image block -->
         <div class="relative">
           <div class="absolute -top-4 -left-4 w-full h-full border border-gold-400/30"></div>
-          <div class="relative overflow-hidden"
-            style="background: linear-gradient(160deg, #e8d5d0 0%, #d4a98b 100%); aspect-ratio: 3/4; max-width: 480px;">
-            <div class="relative overflow-hidden"
-              style="aspect-ratio: 3/4; max-width: 480px;">
-              <img
-                src="./aboutme.jpg"
-                alt="Erica Peryga — Career Strategist & Coach"
-                class="w-full h-full object-cover object-top"
-              />
-            </div>
+          <div class="relative overflow-hidden" style="aspect-ratio: 3/4; max-width: 480px;">
+            <img
+              src="./aboutme.jpg"
+              alt="Erica Peryga — Career Strategist & Coach"
+              class="w-full h-full object-cover object-top"
+            />
           </div>
-
-          <!-- Stats floating card -->
           <div class="absolute bottom-8 -right-4 lg:-right-8 bg-cream-50 border border-cream-200 shadow-xl p-6 max-w-[200px]">
             <div class="font-display text-4xl text-gold-500 mb-1">15+</div>
             <div class="font-body text-xs tracking-widest uppercase text-charcoal-800/60 leading-tight">Years in Career Strategy & Leadership Development</div>
           </div>
         </div>
 
-        <!-- Below image: Philosophy + Expertise -->
+        <!-- Below image: Philosophy + Credentials -->
         <div class="flex flex-col gap-8 lg:pr-8">
 
           <!-- Philosophy -->
@@ -48,19 +42,38 @@ const CALENDLY_URL = "https://calendly.com/YOUR_LINK_HERE";
             </p>
           </div>
 
-          <!-- Areas of Expertise -->
+          <!-- Credentials -->
           <div>
-            <p class="font-body text-[10px] tracking-[0.25em] uppercase text-charcoal-800/40 mb-4">Areas of Expertise</p>
-            <div class="flex flex-wrap gap-3">
+            <p class="font-body text-[10px] tracking-[0.25em] uppercase text-charcoal-800/40 mb-4">Credentials</p>
+            <div class="flex flex-wrap gap-2">
               {[
-                "Career Strategy & Reinvention",
-                "Leadership Development",
-                "Personal Brand & Positioning",
-                "Job Search & Interview Strategy",
-                "Confidence & Mindset",
-              ].map(area => (
-                <span class="font-body text-xs tracking-wider px-4 py-2 border border-gold-400/40 text-gold-600 uppercase">
-                  {area}
+                "CPRW Certified",
+                "M.S. Counselor Education",
+                "B.S. Social Work",
+                "Speaker & Trainer",
+                "Podcast Host",
+              ].map(cred => (
+                <span class="font-body text-xs tracking-wider px-3 py-1.5 border border-gold-400/40 text-gold-600 uppercase">
+                  {cred}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <!-- Featured In -->
+          <div>
+            <p class="font-body text-[10px] tracking-[0.25em] uppercase text-charcoal-800/40 mb-4">Featured In</p>
+            <div class="flex flex-wrap gap-2">
+              {[
+                "LinkedIn",
+                "Career Thought Leaders",
+                "Career Karma",
+                "Influential Women",
+                "Industry Conferences",
+                "Podcast Features",
+              ].map(pub => (
+                <span class="font-body text-xs tracking-wider px-3 py-1.5 bg-charcoal-900/5 text-charcoal-800/60 uppercase">
+                  {pub}
                 </span>
               ))}
             </div>
@@ -69,7 +82,7 @@ const CALENDLY_URL = "https://calendly.com/YOUR_LINK_HERE";
         </div>
       </div>
 
-      <!-- Right: Bio text + Pathway bullets + CTA -->
+      <!-- Right: Bio text -->
       <div class="reveal flex flex-col gap-8">
 
         <div>
@@ -85,14 +98,12 @@ const CALENDLY_URL = "https://calendly.com/YOUR_LINK_HERE";
 
           <div class="space-y-5 font-body text-charcoal-800/70 leading-relaxed">
             <p>
-              Erica Peryga helps professionals redefine what's possible in their careers—and take action to get there.
+              Erica Peryga is a transformational career strategist, speaker, and founder of <strong class="text-charcoal-900">The Pathway Method</strong> — a framework designed to help professionals reinvent their careers and confidently navigate what comes next.
             </p>
             <p>
-              With over 15 years of experience in career strategy, leadership development, and higher education, she has worked with individuals at every stage—from those navigating uncertainty to those stepping into their next level of growth.
+              With more than 15 years of experience in career development, leadership, higher education, coaching, and workforce strategy, Erica helps professionals, leaders, and coaches move from feeling stuck and uncertain to clear, confident, and strategically aligned.
             </p>
-            <p>
-              Her work sits at the intersection of strategy, positioning, and mindset—helping clients move from stuck and overwhelmed to clear, confident, and in control of what comes next.
-            </p>
+            <p>Her work blends career reinvention, leadership development, future-focused strategy, AI innovation, human-centered coaching, and transformational growth.</p>
             <p>
               Through her signature framework, <strong class="text-charcoal-900">The Pathway Method</strong>, Erica guides individuals to:
             </p>
@@ -105,7 +116,7 @@ const CALENDLY_URL = "https://calendly.com/YOUR_LINK_HERE";
             "Gain clarity on their direction",
             "Reposition their experience for new opportunities",
             "Build confidence in how they show up",
-            "Take strategic, aligned action",
+            "Take strategic, aligned action toward what's next",
           ].map(item => (
             <li class="flex items-start gap-3 font-body text-sm text-charcoal-800/70">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="text-gold-500 shrink-0 mt-0.5">
@@ -117,8 +128,27 @@ const CALENDLY_URL = "https://calendly.com/YOUR_LINK_HERE";
         </ul>
 
         <p class="font-body text-charcoal-800/70 leading-relaxed">
-          Her approach goes beyond traditional career coaching. It's about helping people reinvent their careers without starting over.
+          Her approach goes beyond traditional career coaching. It's about helping people reinvent their careers, rebuild their confidence, and create what's next — without starting over.
         </p>
+
+        <!-- Areas of Expertise -->
+        <div>
+          <p class="font-body text-[10px] tracking-[0.25em] uppercase text-charcoal-800/40 mb-4">Areas of Expertise</p>
+          <div class="flex flex-wrap gap-3">
+            {[
+              "Career Strategy & Reinvention",
+              "Leadership Development",
+              "Personal Brand & Positioning",
+              "AI & Future of Work",
+              "Confidence & Mindset",
+              "Coach Systems & Growth",
+            ].map(area => (
+              <span class="font-body text-xs tracking-wider px-4 py-2 border border-gold-400/40 text-gold-600 uppercase">
+                {area}
+              </span>
+            ))}
+          </div>
+        </div>
 
         <div>
           <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" class="btn-primary">
