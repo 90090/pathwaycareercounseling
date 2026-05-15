@@ -174,6 +174,7 @@ const getArchetype = (answers: (string | number)[]): Archetype => {
   if (q1 === "purpose" || q1 === "stuck") return archetypes[5];
   if (readiness >= 7) return archetypes[4];
   return archetypes[0];
+  
 };
 
 export default function CareerQuiz() {
