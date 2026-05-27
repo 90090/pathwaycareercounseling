@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const CALENDLY_URL = "https://calendly.com/YOUR_LINK_HERE";
+const CALENDLY_URL = "https://calendly.com/selfdevelopmentpathway/30min";
 
 interface Question {
   id: number;

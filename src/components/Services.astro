@@ -1,5 +1,5 @@
 ---
-const CALENDLY_URL = "https://calendly.com/YOUR_LINK_HERE";
+
 
 const services = [
   {
@@ -7,12 +7,14 @@ const services = [
     title: "Career Coaching",
     subtitle: "Strategic 1:1 Guidance",
     description: "Strategic guidance and personalized support for professionals navigating career growth, transitions, reinvention, and what comes next.",
+    calendlyUrl: "https://calendly.com/selfdevelopmentpathway/30min",
     features: ["Personalized career roadmap", "Accountability & momentum", "Goal clarity & action planning", "Mindset & confidence work"],
   },
   {
     tag: "High Impact",
     title: "Resume & LinkedIn Optimization",
     subtitle: "Stand Out on Paper & Online",
+    calendlyUrl:"https://calendly.com/selfdevelopmentpathway/resume-linkedin-session",
     description: "ATS-optimized resumes, LinkedIn profile enhancement, personal brand positioning, and modern job search strategy designed to help clients stand out in today's evolving market.",
     features: ["ATS-optimized resume", "LinkedIn profile rewrite", "Personal brand narrative", "Modern job search strategy"],
   },
@@ -20,6 +22,7 @@ const services = [
     tag: "High Impact",
     title: "Interview Coaching",
     subtitle: "Walk In Confident, Walk Out Hired",
+    calendlyUrl:"https://calendly.com/selfdevelopmentpathway/interview-coaching",
     description: "Mock interviews, STAR methodology training, confidence-building, salary negotiation guidance, and strategic preparation to help clients interview with clarity and confidence.",
     features: ["Mock interviews & feedback", "STAR method mastery", "Salary negotiation coaching", "Confidence & presence work"],
   },
@@ -27,6 +30,7 @@ const services = [
     tag: "Strategic",
     title: "Career Pivot Strategy",
     subtitle: "Change Lanes. Not Your Values.",
+    calendlyUrl:"https://calendly.com/selfdevelopmentpathway/career-pivot-strategy",
     description: "Support for professionals transitioning industries, redefining their path, or reinventing their careers without starting over.",
     features: ["Skills gap analysis", "Industry research & targeting", "Transition roadmap", "Network activation strategy"],
   },
@@ -34,6 +38,7 @@ const services = [
     tag: "Executive",
     title: "Leadership & Executive Coaching",
     subtitle: "Lead With Purpose & Presence",
+    calendlyUrl:"https://calendly.com/selfdevelopmentpathway/leadership-executive-coaching",
     description: "Coaching for emerging and established leaders focused on executive presence, communication, confidence, strategic growth, leadership development, and navigating the future of work.",
     features: ["Executive presence", "Leadership assessment", "Strategic communication", "Future of work navigation"],
   },
@@ -41,6 +46,7 @@ const services = [
     tag: "Future-Forward",
     title: "AI-Powered Career Strategy",
     subtitle: "Modern Strategies for a Changing World",
+    calendlyUrl:"https://calendly.com/selfdevelopmentpathway/ai-power-career",
     description: "Modern career coaching that blends human-centered transformation with cutting-edge AI tools, future-of-work insights, and innovative job search strategies.",
     features: ["AI tools & integration", "Future-of-work insights", "Modern job search strategy", "Personal brand in the AI era"],
   },
@@ -48,6 +54,7 @@ const services = [
     tag: "For Coaches",
     title: "Coach Systems & Growth Strategy",
     subtitle: "Simplify. Scale. Grow.",
+    calendlyUrl:"https://calendly.com/selfdevelopmentpathway/coaching-systems-growth",
     description: "Support for coaches looking to simplify backend systems, improve lead flow, strengthen client experience, and build scalable coaching ecosystems.",
     features: ["CRM & workflow setup", "Lead generation strategy", "Client experience design", "Scalable systems & automation"],
   },
@@ -55,6 +62,7 @@ const services = [
     tag: "Speaking",
     title: "Speaking & Training",
     subtitle: "Transformational Experiences",
+    calendlyUrl:"https://calendly.com/selfdevelopmentpathway/speaking-training",
     description: "Keynotes, workshops, and training experiences focused on career reinvention, leadership development, AI and the future of work, workforce transformation, and modern professional growth.",
     features: ["Keynote speaking", "Team workshops & training", "Corporate partnerships", "Conference & event engagements"],
   },
@@ -164,7 +172,7 @@ const services = [
               ))}
             </div>
             <div class="mt-8 pt-6 border-t border-gold-500/15">
-              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" class="btn-primary text-xs py-3 px-6 inline-flex">
+              <a href="https://calendly.com/selfdevelopmentpathway/30min" target="_blank" rel="noopener noreferrer" class="btn-primary text-xs py-3 px-6 inline-flex">
                 Get Started
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
@@ -201,7 +209,7 @@ const services = [
                 </li>
               ))}
             </ul>
-            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer"
+            <a href={service.calendlyUrl} target="_blank" rel="noopener noreferrer"
               class="inline-flex items-center gap-2 font-body text-xs tracking-[0.15em] uppercase text-gold-500 hover:text-gold-600 transition-all duration-300 group">
               Get Started
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform duration-300">
@@ -233,7 +241,7 @@ const services = [
               <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
             </svg>
           </a>
-          <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" class="btn-outline">
+          <a href="https://calendly.com/selfdevelopmentpathway/30min" target="_blank" rel="noopener noreferrer" class="btn-outline">
             Book Your Free Consultation
           </a>
         </div>
