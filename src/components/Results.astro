@@ -9,12 +9,10 @@ const stats = [
 ];
 
 const mediaLogos = [
-  { name: "Forbes", placeholder: "Forbes" },
-  { name: "LinkedIn News", placeholder: "LinkedIn News" },
-  { name: "USA Today", placeholder: "USA Today" },
-  { name: "HuffPost", placeholder: "HuffPost" },
-  { name: "Business Insider", placeholder: "Business Insider" },
-  { name: "Career Contessa", placeholder: "Career Contessa" },
+  { name: "Influential Women", placeholder: "./asSeenon/influentialwomenlogo.png" },
+  { name: "Career Karma", placeholder: "./asSeenon/careerkarma.png" },
+  { name: "LinkedIn", placeholder: "./asSeenon/linkedinlogo.png" },
+  { name: "Career Thought Leaders Symposium", placeholder: "./asSeenon/CTL.png" },
 ];
 ---
 
@@ -71,19 +69,12 @@ const mediaLogos = [
     <div class="flex flex-wrap items-center justify-center gap-8 lg:gap-16 stagger-children">
       {mediaLogos.map((logo) => (
         <div class="reveal group flex items-center justify-center">
-          <!-- Placeholder logo blocks — replace with actual <img> tags -->
-          <div class="h-8 px-6 bg-charcoal-800/10 flex items-center justify-center min-w-[100px] group-hover:bg-gold-500/10 transition-colors duration-300">
-            <span class="font-display text-sm font-600 text-charcoal-800/40 group-hover:text-gold-500 transition-colors duration-300 tracking-widest uppercase whitespace-nowrap">
-              {logo.placeholder}
-            </span>
+          <div class="h-20 px-6 flex items-center justify-center min-w-[100px] transition-colors duration-300">
+            <img src={logo.placeholder} alt={logo.name} class="h-full object-contain" />
           </div>
         </div>
       ))}
     </div>
-
-    <p class="text-center mt-8 font-body text-xs text-charcoal-800/30 tracking-widest uppercase reveal">
-      Replace placeholder logos with actual media logos
-    </p>
 
   </div>
 </section>

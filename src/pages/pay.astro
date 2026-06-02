@@ -1,0 +1,363 @@
+---
+// Standalone payment page — not linked in nav or footer
+// Send this URL directly to clients: yoursite.com/pay
+
+const STRIPE_LINK = "https://buy.stripe.com/YOUR_STRIPE_LINK_HERE";
+
+const services = [
+  "The Pathway Intensive™ (VIP Experience)",
+  "Career Coaching",
+  "Resume & LinkedIn Optimization",
+  "Interview Coaching",
+  "Career Pivot Strategy",
+  "Leadership & Executive Coaching",
+  "AI-Powered Career Strategy",
+  "Speaking & Training",
+  "Coach Systems & Growth Strategy",
+  "Custom Package",
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure Payment | Pathway Career Coaching</title>
+  <meta name="description" content="Secure payment portal for Pathway Career Coaching clients." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold: #b87e27;
+      --gold-light: #d4a84b;
+      --charcoal: #1c1410;
+      --charcoal-mid: #2c2015;
+      --cream: #fdf9f6;
+      --cream-mid: #f8efee;
+      --cream-border: #e8cbc8;
+      --text: #3a2e28;
+      --text-muted: rgba(58,46,40,0.55);
+    }
+    html, body {
+      min-height: 100vh;
+      font-family: 'Jost', sans-serif;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+      background:
+        radial-gradient(ellipse at 80% 0%, rgba(184,126,39,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 0% 100%, rgba(184,126,39,0.05) 0%, transparent 50%),
+        var(--cream-mid);
+      color: var(--text);
+    }
+    .card {
+      width: 100%;
+      max-width: 520px;
+      background: #fff;
+      border: 1px solid var(--cream-border);
+      box-shadow: 0 20px 60px rgba(28,20,16,0.08), 0 4px 16px rgba(28,20,16,0.04);
+      overflow: hidden;
+    }
+    .card-header {
+      background: linear-gradient(135deg, var(--charcoal) 0%, var(--charcoal-mid) 100%);
+      padding: 2.5rem 2.5rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+    .card-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(184,126,39,0.4), transparent);
+    }
+    .brand { display: flex; flex-direction: column; align-items: center; margin-bottom: 1.5rem; }
+    .brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 400;
+      color: #f5f0e8;
+      letter-spacing: 0.05em;
+      line-height: 1;
+    }
+    .brand-sub {
+      font-size: 0.625rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(212,168,75,0.7);
+      margin-top: 0.375rem;
+    }
+    .header-label {
+      font-size: 0.625rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+    .header-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.625rem;
+      font-weight: 300;
+      color: #f5f0e8;
+    }
+    .card-body { padding: 2.5rem; }
+    .intro {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .trust-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--cream-border);
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.6875rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .trust-item svg { color: var(--gold); flex-shrink: 0; }
+    .field-label {
+      font-size: 0.625rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 0.625rem;
+    }
+    .service-select {
+      width: 100%;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.875rem;
+      padding: 0.875rem 2.5rem 0.875rem 1rem;
+      background-color: var(--cream-mid);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23b87e27' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      border: 1px solid var(--cream-border);
+      color: var(--text);
+      appearance: none;
+      cursor: pointer;
+      transition: border-color 0.2s;
+      margin-bottom: 1.75rem;
+    }
+    .service-select:focus { outline: none; border-color: var(--gold); }
+    .amount-note {
+      background: var(--cream-mid);
+      border: 1px solid var(--cream-border);
+      border-left: 2px solid var(--gold);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.75rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .amount-note strong { color: var(--text); font-weight: 500; }
+    .amount-note a { color: var(--gold); text-decoration: none; }
+    .pay-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.625rem;
+      width: 100%;
+      padding: 1.125rem 2rem;
+      background: var(--gold);
+      color: #fdf9f6;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+      box-shadow: 0 4px 20px rgba(184,126,39,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    .pay-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.08) 0%, transparent 60%);
+    }
+    .pay-btn:hover {
+      background: #9a681e;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba(184,126,39,0.4);
+    }
+    .pay-btn:active { transform: translateY(0); }
+    .security-note {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+      font-size: 0.6875rem;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+    .security-note svg { color: var(--gold); flex-shrink: 0; }
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 1.75rem 0;
+      color: var(--text-muted);
+      font-size: 0.6875rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--cream-border);
+    }
+    .contact-line {
+      text-align: center;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .contact-line a { color: var(--gold); text-decoration: none; }
+    .contact-line a:hover { text-decoration: underline; }
+    .card-footer {
+      background: var(--cream-mid);
+      border-top: 1px solid var(--cream-border);
+      padding: 1.25rem 2.5rem;
+      text-align: center;
+    }
+    .footer-brand {
+      font-size: 0.625rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .stripe-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.625rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(58,46,40,0.3);
+      margin-top: 0.5rem;
+    }
+    @media (max-width: 480px) {
+      .card-header, .card-body { padding: 2rem 1.5rem; }
+      .card-footer { padding: 1rem 1.5rem; }
+      .trust-row { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+
+    <div class="card-header">
+      <div class="brand">
+        <span class="brand-name">Pathway</span>
+        <span class="brand-sub">Career Coaching & Self Development</span>
+      </div>
+      <p class="header-label">Secure Client Payment</p>
+      <h1 class="header-title">Complete Your Investment</h1>
+    </div>
+
+    <div class="card-body">
+
+      <p class="intro">
+        Welcome. You're one step away from beginning your Pathway experience. Select your service below and proceed to our secure checkout.
+      </p>
+
+      <div class="trust-row">
+        <div class="trust-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+          SSL Secured
+        </div>
+        <div class="trust-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/>
+          </svg>
+          Encrypted Payment
+        </div>
+        <div class="trust-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Powered by Stripe
+        </div>
+      </div>
+
+      <div class="amount-note">
+        <strong>Your investment amount was confirmed by Erica.</strong><br />
+        The exact amount discussed will be collected at checkout. If you have any questions about your balance, <a href="mailto:hello@pathwaycareercoaching.com">reach out before proceeding</a>.
+      </div>
+
+      <a
+        id="pay-btn"
+        href={STRIPE_LINK}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="pay-btn"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/>
+        </svg>
+        Proceed to Secure Checkout
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+        </svg>
+      </a>
+
+      <div class="security-note">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        </svg>
+        Your payment information is never stored on this site
+      </div>
+
+      <div class="divider">Questions?</div>
+
+      <p class="contact-line">
+        Reach out to Erica directly at<br />
+        <a href="mailto:selfdevelopmentpathway@gmail.com">selfdevelopmentpathway@gmail.com</a>
+      </p>
+
+    </div>
+
+    <div class="card-footer">
+      <p class="footer-brand">© {new Date().getFullYear()} Pathway Career Coaching & Self Development</p>
+      <div class="stripe-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+        Payments secured by Stripe
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
