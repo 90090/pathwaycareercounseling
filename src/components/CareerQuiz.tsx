@@ -204,10 +204,16 @@ export default function CareerQuiz() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await fetch("/api/quiz", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, answers, archetype: archetype?.id }),
+     await fetch(import.meta.env.PUBLIC_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          source: 'career_quiz',    // routes to Brevo list 1
+          firstName: name,
+          email,
+          archetype,               // e.g. "reinvention-seeker"
+          answers,
+        }),
       });
     } catch {}
     setSubmitted(true);

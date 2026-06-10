@@ -139,7 +139,14 @@ const CALENDLY_URL = "https://calendly.com/YOUR_LINK_HERE";
     e.preventDefault();
     const email = (form.querySelector('input[name="email"]') as HTMLInputElement)?.value;
     try {
-      await fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email, source: 'podcast_waitlist' }) });
+      await fetch(import.meta.env.PUBLIC_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          source: 'podcast_waitlist', // routes to Brevo list 4
+          email,
+        }),
+      });
     } catch {}
     form.style.display = 'none';
     success?.classList.remove('hidden');

@@ -149,10 +149,13 @@
     e.preventDefault();
     const email = (form.querySelector('input[name="email"]') as HTMLInputElement)?.value;
     try {
-      await fetch('/api/subscribe', {
+      await fetch(import.meta.env.PUBLIC_API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, source: 'announcement_bar' }),
+        body: JSON.stringify({
+          source: 'announcement_bar', // routes to Brevo list 3
+          email,
+        }),
       });
     } catch {}
     form.classList.add('hidden');

@@ -3,8 +3,22 @@
 // Send this URL directly to clients: yoursite.com/pay
 export const sitemap = false;
 
-const STRIPE_LINK = "https://buy.stripe.com/YOUR_STRIPE_LINK_HERE";
 
+export const prerender = true;
+
+const services = [
+  { label: "Select your service...", url: "" },
+  { label: "The Pathway Intensive™ (VIP Experience)", url: "https://buy.stripe.com/REPLACE_VIP" },
+  { label: "Career Coaching", url: "https://buy.stripe.com/REPLACE_CAREER" },
+  { label: "Resume & LinkedIn Optimization", url: "https://buy.stripe.com/REPLACE_RESUME" },
+  { label: "Interview Coaching", url: "https://buy.stripe.com/REPLACE_INTERVIEW" },
+  { label: "Career Pivot Strategy", url: "https://buy.stripe.com/REPLACE_PIVOT" },
+  { label: "Leadership & Executive Coaching", url: "https://buy.stripe.com/REPLACE_LEADERSHIP" },
+  { label: "AI-Powered Career Strategy", url: "https://buy.stripe.com/REPLACE_AI" },
+  { label: "Speaking & Training", url: "https://buy.stripe.com/REPLACE_SPEAKING" },
+  { label: "Coach Systems & Growth Strategy", url: "https://buy.stripe.com/REPLACE_COACH" },
+  { label: "Custom Package — Contact Erica", url: "" },
+];
 ---
 
 <!DOCTYPE html>
@@ -259,6 +273,44 @@ const STRIPE_LINK = "https://buy.stripe.com/YOUR_STRIPE_LINK_HERE";
     }
   </style>
 </head>
+<script>
+  const select = document.getElementById('service-select');
+  const btn = document.getElementById('pay-btn');
+  const amountNote = document.getElementById('amount-note');
+  const customNote = document.getElementById('custom-note');
+
+  select.addEventListener('change', () => {
+    const url = select.value;
+    const label = select.options[select.selectedIndex].text;
+    const isCustom = label.includes('Custom Package');
+
+    if (url) {
+      // Has a Stripe link — enable button
+      btn.disabled = false;
+      btn.style.opacity = '1';
+      btn.style.cursor = 'pointer';
+      btn.onclick = () => window.open(url, '_blank');
+      amountNote.style.display = 'block';
+      customNote.style.display = 'none';
+    } else if (isCustom) {
+      // Custom package — no link, show contact note
+      btn.disabled = true;
+      btn.style.opacity = '0.45';
+      btn.style.cursor = 'not-allowed';
+      btn.onclick = null;
+      amountNote.style.display = 'none';
+      customNote.style.display = 'block';
+    } else {
+      // Nothing selected
+      btn.disabled = true;
+      btn.style.opacity = '0.45';
+      btn.style.cursor = 'not-allowed';
+      btn.onclick = null;
+      amountNote.style.display = 'block';
+      customNote.style.display = 'none';
+    }
+  });
+</script>
 <body>
 
   <div class="card">
@@ -299,26 +351,41 @@ const STRIPE_LINK = "https://buy.stripe.com/YOUR_STRIPE_LINK_HERE";
         </div>
       </div>
 
-      <div class="amount-note">
-        <strong>Your investment amount was confirmed by Erica.</strong><br />
-        The exact amount discussed will be collected at checkout. If you have any questions about your balance, <a href="mailto:hello@pathwaycareercoaching.com">reach out before proceeding</a>.
-      </div>
+      <label class="field-label" for="service-select">What are you paying for?</label>
+        <select class="service-select" id="service-select">
+          {services.map(s => (
+            <option value={s.url}>{s.label}</option>
+          ))}
+        </select>
 
-      <a
-        id="pay-btn"
-        href={STRIPE_LINK}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="pay-btn"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/>
-        </svg>
-        Proceed to Secure Checkout
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
-        </svg>
-      </a>
+        <div class="amount-note" id="amount-note">
+          <strong>Your investment amount was confirmed by Erica.</strong><br />
+          Select your service above to proceed to checkout. If you have any questions,
+          <a href="mailto:selfdevelopmentpathway@gmail.com">reach out before proceeding</a>.
+        </div>
+
+        <!-- Custom package note — hidden by default -->
+        <div class="amount-note" id="custom-note" style="display:none; border-left-color: #e8cbc8;">
+          For custom packages, please reach out to Erica directly to arrange payment.<br />
+          <a href="mailto:selfdevelopmentpathway@gmail.com">selfdevelopmentpathway@gmail.com</a>
+        </div>
+
+        <button
+          id="pay-btn"
+          disabled
+          class="pay-btn"
+          style="opacity: 0.45; cursor: not-allowed;"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/>
+          </svg>
+          Proceed to Secure Checkout
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
+        </button>
 
       <div class="security-note">
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">

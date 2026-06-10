@@ -208,12 +208,32 @@ const formats = [
   const form = document.getElementById('speaking-form') as HTMLFormElement;
   const success = document.getElementById('speaking-success');
   const submitBtn = document.getElementById('speaking-submit') as HTMLButtonElement;
+
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
-    const data = Object.fromEntries(new FormData(form).entries());
-    try { await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...data, type: 'speaking' }) }); } catch {}
+
+    const formData = new FormData(form);
+
+    try {
+      await fetch(import.meta.env.PUBLIC_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          source:       'speaking',
+          firstName:    formData.get('firstName'),
+          lastName:     formData.get('lastName'),
+          email:        formData.get('email'),
+          organization: formData.get('organization'),
+          format:       formData.get('format'),
+          message:      formData.get('message'),
+        }),
+      });
+    } catch (err) {
+      console.error('Speaking form error:', err);
+    }
+
     form.classList.add('hidden');
     success?.classList.remove('hidden');
   });
