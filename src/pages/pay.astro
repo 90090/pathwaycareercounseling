@@ -8,15 +8,15 @@ export const prerender = true;
 
 const services = [
   { label: "Select your service...", url: "" },
-  { label: "The Pathway Intensive™ (VIP Experience)", url: "https://buy.stripe.com/REPLACE_VIP" },
-  { label: "Career Coaching", url: "https://buy.stripe.com/REPLACE_CAREER" },
-  { label: "Resume & LinkedIn Optimization", url: "https://buy.stripe.com/REPLACE_RESUME" },
-  { label: "Interview Coaching", url: "https://buy.stripe.com/REPLACE_INTERVIEW" },
-  { label: "Career Pivot Strategy", url: "https://buy.stripe.com/REPLACE_PIVOT" },
-  { label: "Leadership & Executive Coaching", url: "https://buy.stripe.com/REPLACE_LEADERSHIP" },
-  { label: "AI-Powered Career Strategy", url: "https://buy.stripe.com/REPLACE_AI" },
-  { label: "Speaking & Training", url: "https://buy.stripe.com/REPLACE_SPEAKING" },
-  { label: "Coach Systems & Growth Strategy", url: "https://buy.stripe.com/REPLACE_COACH" },
+  { label: "The Pathway Intensive™ (VIP Experience)", url: "https://buy.stripe.com/5kQ28sc130HU0Txe8B5os04" },
+  { label: "Career Coaching", url: "https://buy.stripe.com/cNieVeghj0HUfOr4y15os07" },
+  { label: "Resume & LinkedIn Optimization", url: "https://buy.stripe.com/8x228s6GJbmycCf6G95os08" },
+  { label: "Interview Coaching", url: "https://buy.stripe.com/dRmfZi2qtbmy1XB2pT5os09" },
+  { label: "Career Pivot Strategy", url: "https://buy.stripe.com/7sY9AUc138am7hV6G95os03" },
+  { label: "Leadership & Executive Coaching", url: "https://buy.stripe.com/4gMbJ25CF2Q2eKnfcF5os06" },
+  { label: "AI-Powered Career Strategy", url: "https://buy.stripe.com/3cI6oI0il4Ya0Tx5C55os05" },
+  { label: "Speaking & Training - Contact Erica", url: "" },
+  { label: "Coach Systems & Growth Strategy", url: "https://buy.stripe.com/aFa00k3ux8am1XBggJ5os0a" },
   { label: "Custom Package — Contact Erica", url: "" },
 ];
 ---
@@ -283,6 +283,7 @@ const services = [
     const url = select.value;
     const label = select.options[select.selectedIndex].text;
     const isCustom = label.includes('Custom Package');
+    const isSpeaking = label.includes('Speaking & Training');
 
     if (url) {
       // Has a Stripe link — enable button
@@ -292,7 +293,7 @@ const services = [
       btn.onclick = () => window.open(url, '_blank');
       amountNote.style.display = 'block';
       customNote.style.display = 'none';
-    } else if (isCustom) {
+    } else if (isCustom || isSpeaking) {
       // Custom package — no link, show contact note
       btn.disabled = true;
       btn.style.opacity = '0.45';
