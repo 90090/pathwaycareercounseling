@@ -92,5 +92,44 @@ const {
         }
       });
     </script>
+    <!-- phone insertion script begins -->
+
+    <script is:inline type='text/javascript' src='https://reports.hibu.com/analytics/js/ybDynamicPhoneInsertion.js'></script>
+
+    <script is:inline>
+
+      ybFindPhNums = ['12039822881'];
+      ybReplacePhNums = ['18602451146'];
+
+
+      ybFindPhNumsNoIndx = ['12039822881'];
+      ybReplacePhNumsNoIndx = ['18602645302'];
+
+      document.addEventListener("YextPhoneChangeEvent", yextPhoneChangeEventHandler, false);
+
+      function yextPhoneChangeEventHandler(e) {
+        e.preventDefault();
+        ybFun_ReplaceText();
+      }
+
+      if (typeof dmAPI != 'undefined') {
+        dmAPI.runOnReady('dpni', function() {
+        setTimeout(ybFun_ReplaceText, 500);
+      });
+      window.addEventListener('DOMContentLoaded', function() {
+        dmAPI.subscribeEvent(dmAPI.EVENTS.SHOW_POPUP,
+        function(data) {
+          setTimeout(ybFun_ReplaceText, 500);
+        });
+      });
+      } else {
+      window.onload = function() {
+        setTimeout(ybFun_ReplaceText, 500);
+        }
+      }
+
+    </script>
+
+    <!-- phone insertion script ends -->
   </body>
 </html>
