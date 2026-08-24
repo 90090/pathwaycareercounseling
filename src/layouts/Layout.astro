@@ -102,40 +102,54 @@ const {
     </script>
     <!-- phone insertion script begins -->
 
-    <script is:inline type='text/javascript' src='https://reports.hibu.com/analytics/js/ybDynamicPhoneInsertion.js'></script>
-
     <script is:inline>
+      (function () {
+        var findNum = '2039822881';   // digits only, no country code
+        var replaceNum = '8602645302'; // digits only, no country code
 
-      ybFindPhNums = ['12039822881'];
-      ybReplacePhNums = ['18602451146'];
-
-
-      ybFindPhNumsNoIndx = ['12039822881'];
-      ybReplacePhNumsNoIndx = ['18602645302'];
-
-      document.addEventListener("YextPhoneChangeEvent", yextPhoneChangeEventHandler, false);
-
-      function yextPhoneChangeEventHandler(e) {
-        e.preventDefault();
-        ybFun_ReplaceText();
-      }
-
-      if (typeof dmAPI != 'undefined') {
-        dmAPI.runOnReady('dpni', function() {
-        setTimeout(ybFun_ReplaceText, 500);
-      });
-      window.addEventListener('DOMContentLoaded', function() {
-        dmAPI.subscribeEvent(dmAPI.EVENTS.SHOW_POPUP,
-        function(data) {
-          setTimeout(ybFun_ReplaceText, 500);
-        });
-      });
-      } else {
-      window.onload = function() {
-        setTimeout(ybFun_ReplaceText, 500);
+        function formatNum(digits) {
+          return '(' + digits.substring(0,3) + ') ' + digits.substring(3,6) + '-' + digits.substring(6,10);
         }
-      }
 
+        function walk(node) {
+          if (node.nodeType === 3) { // text node
+            if (node.nodeValue.indexOf(findNum) === -1) {
+              // also check common formatted variants
+              var patterns = [
+                findNum,
+                findNum.substring(0,3) + '-' + findNum.substring(3,6) + '-' + findNum.substring(6,10),
+                findNum.substring(0,3) + '.' + findNum.substring(3,6) + '.' + findNum.substring(6,10),
+                '(' + findNum.substring(0,3) + ') ' + findNum.substring(3,6) + '-' + findNum.substring(6,10),
+              ];
+              for (var p of patterns) {
+                if (node.nodeValue.indexOf(p) !== -1) {
+                  node.nodeValue = node.nodeValue.split(p).join(formatNum(replaceNum));
+                }
+              }
+            }
+            return;
+          }
+          if (node.nodeType === 1) { // element node
+            // handle tel: links specifically
+            if (node.tagName === 'A' && node.href && node.href.indexOf(findNum) !== -1) {
+              node.href = node.href.split(findNum).join(replaceNum);
+            }
+            for (var i = 0; i < node.childNodes.length; i++) {
+              walk(node.childNodes[i]);
+            }
+          }
+        }
+
+        function run() {
+          walk(document.body);
+        }
+
+        if (document.readyState === 'complete') {
+          run();
+        } else {
+          window.addEventListener('load', run);
+        }
+      })();
     </script>
 
     <!-- phone insertion script ends -->
